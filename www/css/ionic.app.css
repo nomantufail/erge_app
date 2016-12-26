@@ -9746,7 +9746,7 @@ a.button {
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px / 1 FontAwesome;
+  font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -11842,11 +11842,6 @@ a.button {
 .action-sheet .button {
   color: #003672; }
 
-.bgImgdivCls {
-  background-image: url("../img/bg.png");
-  background-repeat: no-repeat;
-  background-size: cover; }
-
 #hh {
   color: red; }
 
@@ -11989,14 +11984,15 @@ ul.rating li i {
   width: 230px; }
 
 .signup-heading {
-  color: white;
-  font-size: 25px;
-  font-family: "RobotoLight"; }
+  font-size: 18px;
+  font-family: "RobotoLight";
+  color: #18c9f1;
+  margin-bottom: 5px; }
 
 .signup-role {
   color: white;
-  font-size: 17px;
-  margin-top: 15px;
+  font-size: 18px;
+  margin: 0px;
   font-family: "RobotoLight"; }
 
 .payment-label {
@@ -12016,25 +12012,22 @@ ul.rating li i {
   width: 90%;
   margin: 0 auto; }
 
-.logo {
-  text-align: center;
-  max-width: 30%;
-  margin: 30px auto 10px; }
-
-.logo img {
-  max-width: 100%; }
-
 .form-group {
-  margin: 15px 0;
+  margin: 10px 0;
   overflow: hidden; }
 
-.float-left {
+.float-left, .float-right {
   float: left;
   width: 45%; }
 
 .float-right {
-  float: right;
-  width: 45%; }
+  float: right; }
+  .float-right input[type="button"] {
+    background: #142442;
+    background: -moz-linear-gradient(left, #142442 0%, #1b2e4c 100%);
+    background: -webkit-linear-gradient(left, #142442 0%, #1b2e4c 100%);
+    background: linear-gradient(to right, #142442 0%, #1b2e4c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#142442', endColorstr='#1b2e4c',GradientType=1 ); }
 
 .btn {
   height: 40px;
@@ -13536,3 +13529,92 @@ ion-item.interested-ppl.item {
     top: inherit; }
   .msg-text {
     width: 71%; } }
+
+.login-text {
+  margin: 20px 0; }
+  .login-text h3 {
+    margin: 0;
+    color: #18c9f1;
+    font-size: 20px;
+    text-transform: uppercase; }
+  .login-text h4 {
+    margin: 0px;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 20px; }
+
+.btn-group {
+  margin-bottom: 20px;
+  text-align: justify; }
+  .btn-group button {
+    display: inline-block;
+    width: 48%; }
+    .btn-group button.darkblue-btn {
+      float: right; }
+  .btn-group p {
+    margin: 5px 0px 0;
+    color: #FFF;
+    font-size: 11px; }
+
+.form-field {
+  margin: 0 -5px 20px;
+  overflow: hidden; }
+  .form-field label {
+    display: block;
+    margin-bottom: 10px;
+    padding: 0px 5px;
+    overflow: hidden; }
+    .form-field label.full-field span, .form-field label.half-field span {
+      display: block;
+      color: #FFF;
+      font-synthesis: 14px;
+      margin-bottom: 5px; }
+    .form-field label.full-field input, .form-field label.half-field input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      height: auto;
+      padding: 10px !important;
+      color: #FFF; }
+    .form-field label.half-field {
+      float: left;
+      width: 50%; }
+    .form-field label button {
+      width: 100%;
+      text-transform: uppercase;
+      margin-top: 20px; }
+  .form-field p {
+    color: #FFF;
+    text-align: center; }
+
+.blue-btn, .float-left input[type="button"], .float-right input[type="button"], .darkblue-btn {
+  border-radius: 5px;
+  font-weight: bold;
+  color: #FFF;
+  font-size: 16px;
+  background: -moz-linear-gradient(left, #41eeee 0%, #00b3f3 100%);
+  background: -webkit-linear-gradient(left, #41eeee 0%, #00b3f3 100%);
+  background: linear-gradient(to right, #41eeee 0%, #00b3f3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41eeee', endColorstr='#00b3f3',GradientType=1 );
+  border: 0px;
+  padding: 10px 0; }
+
+.darkblue-btn {
+  background: #142342;
+  background: -moz-linear-gradient(left, #142342 0%, #1b2e4b 100%);
+  background: -webkit-linear-gradient(left, #142342 0%, #1b2e4b 100%);
+  background: linear-gradient(to right, #142342 0%, #1b2e4b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#142342', endColorstr='#1b2e4b',GradientType=1 ); }
+
+.bgImgdivCls {
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.logo {
+  text-align: center;
+  max-width: 30%;
+  margin: 30px auto 10px; }
+
+.logo img {
+  max-width: 100%; }

@@ -74,12 +74,6 @@ $fbold: 'RobotoBold';
   color: #003672;
 }
 
-.bgImgdivCls {
-  background-image: url("../img/bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 #hh {
   color: red;
 }
@@ -254,15 +248,16 @@ ul.rating li i {
 
 ////////////sign up
 .signup-heading {
-  color: white;
-  font-size: 25px;
+  font-size: 18px;
   font-family: $flight;
+  color: #18c9f1;
+  margin-bottom: 5px;
 }
 
 .signup-role {
   color: white;
-  font-size: 17px;
-  margin-top: 15px;
+  font-size: 18px;
+  margin: 0px;
   font-family: $flight;
 }
 
@@ -287,30 +282,36 @@ ul.rating li i {
   //height: 100%;
 }
 
-.logo {
-  text-align: center;
-  max-width: 30%;
-  margin: 30px auto 10px;
-}
-
-.logo img {
-  max-width: 100%;
-}
-
 .form-group {
-  margin: 15px 0;
+  margin: 10px 0;
   overflow: hidden;
 }
 
 .float-left {
   float: left;
   width: 45%;
+  input{
+    &[type="button"]{
+      @extend .blue-btn;
+    }
+  }
 }
 
 .float-right {
+  @extend .float-left;
   float: right;
-  width: 45%;
+  input{
+    &[type="button"]{
+      background: #142442;
+      background: -moz-linear-gradient(left,  #142442 0%, #1b2e4c 100%);
+      background: -webkit-linear-gradient(left,  #142442 0%,#1b2e4c 100%);
+      background: linear-gradient(to right,  #142442 0%,#1b2e4c 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#142442', endColorstr='#1b2e4c',GradientType=1 );
+
+    }
+  }
 }
+
 
 .btn {
   height: 40px;
@@ -2169,3 +2170,8 @@ ion-item.interested-ppl.item {
   //  padding: 10px 10px 5px;
   //}
 }
+
+
+@import "account/account";
+
+@import "common/common";

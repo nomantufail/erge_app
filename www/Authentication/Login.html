@@ -9,19 +9,49 @@
     <source src="../img/erge-video.mp4" type="video/mp4" >
 
   </video>-->
-  <ion-content class="dark-video">
-    <!--main parent div start-->
+  <ion-content class="bgImgdivCls">
+  <div class="container">
+    <div class="logo">
+        <img src="img/logo.png">
+      </div>
+      <div class="login-text">
+        <h3>Login</h3>
+        <h4>WHO WILL YOU LOGIN AS?</h4>
+      </div>
+      <div class="btn-group">
+        <button class="blue-btn" ng-click="setRoleBosss()">Boss</button>
+        <button class="darkblue-btn" ng-click="setRoleCons()">CONECIERGE</button>
+        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.</p>
+      </div>
+      <div class="form-field">
+        <label class="full-field">
+          <span>Username</span>
+          <input type="email" ng-model="loginFieldsData.email">
+        </label>
+        <label class="full-field">
+          <span>Password</span>
+          <input type="password" ng-model="loginFieldsData.password">
+        </label>
+        <label>
+          <button class="blue-btn" ng-click="loginFun()">Start</button>
+        </label>
+        <p><a ng-click="openForgetPassPopover($event)">Forgot Password?</a></p>
+        <p>Not a user? <a ng-click="goToSignupView()">Create Account</a></p>
+      </div>
+    </div>
+
+    <!--main parent div start
     <div style="margin-left: 30px;margin-right: 30px">
-      <!--div for logo start-->
+      <!--div for logo start
       <div style="text-align: center;">
         <img src="img/newLogo.png"  style="margin-top: 10%;height: 45%; width: 45%;">
       </div>
-      <!--div for logo end-->
+      <!--div for logo end
       <p class="login-heading">LOGIN TO YOUR ACCOUNT</p>
 
       <div class="list list-inset" style="background-color: transparent;margin: 10px 10px;">
         <label class="item item-input" style="background-color: transparent;border-top: none;border-right: none;border-left: none">
-          <!--<i class="icon ion-person placeholder-icon">-->
+          <!--<i class="icon ion-person placeholder-icon">
             <i class="">
             <img src="img/email_icon.png"  class="textFieldIconsCls">
           </i>
@@ -34,7 +64,7 @@
 
           <input class="white-inputs" type="password" placeholder="Password" ng-model="loginFieldsData.password">
         </label>
-        <!--<p class="login-heading" style="text-align: left;">LOGIN VIA</p>-->
+        <!--<p class="login-heading" style="text-align: left;">LOGIN VIA</p>
       </div>
       <!--dive for user role toggle start-->
     <!--  <div style="margin-left: 15px;">
@@ -51,14 +81,14 @@
           <p class="role-radio">CONCIERGE</p>
         </div>
       </div>-->
-      <div class="light-blue-btn" style="margin-top: 20px" ng-click="loginFun()">
+      <!-- <div class="light-blue-btn" style="margin-top: 20px" ng-click="loginFun()">
         LOGIN
       </div>
       <p class="smallLinkLabelCls" ng-click="openForgetPassPopover($event)">FORGOT PASSWORD ?</p>
-      <p class="smallLinkLabelCls" style="margin-top: 15px;margin-bottom: 20px" ng-click="goToSignupView()">CREATE NEW ACCOUNT</p>
+      <p class="smallLinkLabelCls" style="margin-top: 15px;margin-bottom: 20px" ng-click="goToSignupView()">CREATE NEW ACCOUNT</p> -->
       <!--dive for user role toggle end-->
 
-    </div>
+    <!-- </div> -->
 
 
 
