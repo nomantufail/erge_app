@@ -1,0 +1,51 @@
+<ion-view view-title="ERGE" class="">
+  <ion-content>
+
+    <div active-map="" id="map-two" position="position" data-tap-disabled="true"></div>
+
+    <div class="activejob-bottom">
+      <div class="container-two">
+        <div class="left-col">
+          <div class="user-img"><img src="{{activeJobDetails.profile_pic}}" alt=""></div>
+          <h4>{{activeJobDetails.l_name}}</h4>
+          <rating ng-model="rating.rate" max="rating.max" readonly="readOnly"></rating>
+        </div>
+        <div class="center-col">
+          <div class="center-block" style="border-top:none">
+            <span style="width:100%">Status:</span>
+            <span style="width:100%">{{activeJobDetails.cancierge_status}}</span>
+          </div>
+          <div class="center-block">
+            <span style="width:100%">Start Location:</span>
+            <span style="width:100%">{{activeJobDetails.start_loc}}</span>
+          </div>
+          <div class="center-block">
+            <span style="width:100%">End Location:</span>
+            <span style="width:100%">{{activeJobDetails.dest_loc}}</span>
+          </div>
+          <div class="center-block">
+            <span>Fare:</span>
+            <span>${{activeJobDetails.price}}</span>
+          </div>
+          <div class="center-block">
+            <span><img src="img/jobComplete_21.png" alt=""></span>
+            <span style="color: #005f96;text-decoration: underline"
+                  ng-click="openImageViewerPopover(activeJobDetails.attachment)">attachment</span>
+          </div>
+          <div class="center-block">
+            <span><img src="img/jobComplete_29.png" alt=""></span>
+            <span>{{activeJobDetails.mobile_no}}</span>
+          </div>
+        </div>
+        <div class="right-col">
+          <div class="right-icon"><img src="img/jobComplete_14.png" alt="" ng-click="callNumber()"></div>
+          <!--<div class="right-icon"><img src="img/jobComplete_18.png" alt=""></div>-->
+          <div class="right-icon"><img src="img/jobComplete_18.png" alt="" ng-click="sendmessege()"></div>
+          <div class="right-icon"><img src="img/jobComplete_27.png" alt="" ng-click="jobComplete()"></div>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
+

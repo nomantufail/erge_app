@@ -1,0 +1,131 @@
+<ion-view view-title="ERGE" class="bgImgdivCls">
+  <!--<ion-side-menus enable-menu-with-back-views="true">
+    <ion-nav-back-button>-->
+      <p class="jobs-title">PENDING JOB DETAILS</p>
+      <ion-content style="margin-top: 45px;">
+        <div class="container">
+          <div class="box">
+            <div class="outer">
+              <h3 class="heading-4">Description</h3>
+
+              <p class="text-4">{{PendingJobDetail.description}}</p>
+
+              <div class="plus_icon">
+                <i class="fa  fa-ellipsis-h three-dots" ng-click="changeJobDetailsShow()"></i>
+                <!-- <img src="img/plus-iccon.jpg" alt="" width="40" ng-click="changeJobDetailsShow()">-->
+              </div>
+              <div class="contant-div-data animate-hide" ng-hide="hideHJobDetails">
+                <div class="box-body">
+                  <table width="100%">
+                    <tr>
+                      <td align="right">Start Point:</td>
+                      <td class="column">{{PendingJobDetail.start_loc}}</td>
+                    </tr>
+                    <tr>
+                      <td align="right">End Point:</td>
+                      <td class="column">{{PendingJobDetail.dest_loc}}</td>
+                    </tr>
+                    <tr>
+                      <td align="right">Fare:</td>
+                      <td class="column">${{PendingJobDetail.price}}</td>
+                    </tr>
+                    <tr>
+                      <td align="right">Date:</td>
+                      <td class="column">{{PendingJobDetail.completion_date}}</td>
+                    </tr>
+                    <tr>
+                      <td align="right">Time:</td>
+                      <td class="column">{{PendingJobDetail.completion_time}}</td>
+                    </tr>
+
+                    <tr>
+                      <td align="right">&nbsp;</td>
+
+                  </table>
+                </div>
+                <div class="box-bottom-center"><img src="{{PendingJobDetail.attachment}}" alt=""
+                                                    ng-click="openImageViewerPopover(PendingJobDetail.attachment)">
+                </div>
+                <p style="text-align: center;text-decoration: underline;color: #0092ef">attachment</p>
+              </div>
+
+            </div>
+            <hr>
+            <h3 class="heading-4">People Intrested</h3>
+
+            <p class="text-4">(Request from last 10 minutes)</p>
+
+            <div style="text-align: center" ng-hide="hideLoder">
+              <ion-spinner icon="dots" class="spinner1"></ion-spinner>
+            </div>
+            <div style="text-align: center" ng-show="noApplicationFound">
+              No requests from any conscierge
+            </div>
+            <div ng-if="applicantsList.length>0" class="people-holder">
+
+              <ion-list>
+                <ion-item ng-repeat="item in applicantsList" class="interested-ppl">
+                  <div class="people-box">
+                    <div class="people-img"><img src="{{item.profile_pic}}" alt=""
+                                                 style="height:80px !important; width: 80px !important; "></div>
+                    <!--{{item.profile_pic}}-->
+                    <div class="people-name">
+                      <h4>{{item.l_name}}</h4>
+
+                      <div style="border-bottom: 1px solid #d8d8d8">
+                        <p class="img-p">{{item.application_description}}</p>
+                        <i class="fa fa-check-circle tick-circle" ng-click="assignJobFun(item.canidate_id)"></i>
+
+                        <div class="clear"></div>
+                      </div>
+
+                      <div ng-hide="true">{{rating.rate = item.rating}}</div>
+                      <rating ng-model="rating.rate" max="rating.max" readonly="readOnly"></rating>
+                      <div><p>{{item.created_at}}</p></div>
+                      <!--<p>star img goes here</p>-->
+                    </div>
+                    <!--<div class="people-ok" ng-click="assignJobFun(item.canidate_id)">-->
+                    <!--&lt;!&ndash; <img src="img/ok-icon.png" alt="" width="40">&ndash;&gt;-->
+                    <!--<i class="fa fa-check-circle tick-circle"></i>-->
+                    <!--</div>-->
+                    <div class="clear"></div>
+                  </div>
+
+                </ion-item>
+              </ion-list>
+              <!-- <div class="people-box">
+                 <div class="people-img"><img src="img/user-img-circle.png" alt=""></div>
+                 <div class="people-name">
+                   <h4>Owen</h4>
+                   <p>star img goes here</p>
+                 </div>
+                 <div class="people-ok"><img src="img/ok-icon.png" alt="" width="40"></div>
+                 <div class="clear"></div>
+               </div>
+               <div class="people-box">
+                 <div class="people-img"><img src="img/user-img-circle.png" alt=""></div>
+                 <div class="people-name">
+                   <h4>Owen</h4>
+                   <p>star img goes here</p>
+                 </div>
+                 <div class="people-ok"><img src="img/ok-icon.png" alt="" width="40"></div>
+                 <div class="clear"></div>
+               </div>
+               <div class="people-box">
+                 <div class="people-img"><img src="img/user-img-circle.png" alt=""></div>
+                 <div class="people-name">
+                   <h4>Owen</h4>
+                   <p>star img goes here</p>
+                 </div>
+                 <div class="people-ok"><img src="img/ok-icon.png" alt="" width="40"></div>
+                 <div class="clear"></div>
+               </div>-->
+            </div>
+          </div>
+        </div>
+        </div>
+      </ion-content>
+  <!--</ion-side-menus>
+  </ion-nav-back-button>-->
+</ion-view>
+

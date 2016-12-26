@@ -1,0 +1,66 @@
+<ion-view class="bgImgdivCls">
+  <div data-tap-disable="true">
+  <video class="bgVideo" controls preload="true" autoplay loop muted>
+    <source src="img/erge-video.mp4" type="video/mp4" >
+  </video>
+  </div>
+<!--  <video autoplay loop poster="" class="bgVideo">
+
+    <source src="../img/erge-video.mp4" type="video/mp4" >
+
+  </video>-->
+  <ion-content class="dark-video">
+    <!--main parent div start-->
+    <div style="margin-left: 30px;margin-right: 30px">
+      <!--div for logo start-->
+      <div style="text-align: center;">
+        <img src="img/newLogo.png"  style="margin-top: 10%;height: 45%; width: 45%;">
+      </div>
+      <!--div for logo end-->
+      <p class="login-heading">LOGIN TO YOUR ACCOUNT</p>
+
+      <div class="list list-inset" style="background-color: transparent;margin: 10px 10px;">
+        <label class="item item-input" style="background-color: transparent;border-top: none;border-right: none;border-left: none">
+          <!--<i class="icon ion-person placeholder-icon">-->
+            <i class="">
+            <img src="img/email_icon.png"  class="textFieldIconsCls">
+          </i>
+          <input class="white-inputs" type="email" placeholder="Email" ng-model="loginFieldsData.email">
+        </label>
+        <label class="item item-input" style="background-color: transparent;border-top: none;border-right: none;border-left: none">
+          <i>
+            <img src="img/password_iocn.png"  class="textFieldIconsCls">
+          </i>
+
+          <input class="white-inputs" type="password" placeholder="Password" ng-model="loginFieldsData.password">
+        </label>
+        <!--<p class="login-heading" style="text-align: left;">LOGIN VIA</p>-->
+      </div>
+      <!--dive for user role toggle start-->
+    <!--  <div style="margin-left: 15px;">
+        <div >
+          <i class="" ng-click="setRoleBosss()">
+            <img src="img/{{image_b}}"  class="userRoleToggle" id="bossRadioBtnId">
+          </i>
+          <p class="role-radio">BOSS</p>
+        </div>
+        <div>
+          <i class="" ng-click="setRoleCons()">
+            <img src="img/{{image_c}}" class="userRoleToggle" id="concRadioBtnId">
+          </i>
+          <p class="role-radio">CONCIERGE</p>
+        </div>
+      </div>-->
+      <div class="light-blue-btn" style="margin-top: 20px" ng-click="loginFun()">
+        LOGIN
+      </div>
+      <p class="smallLinkLabelCls" ng-click="openForgetPassPopover($event)">FORGOT PASSWORD ?</p>
+      <p class="smallLinkLabelCls" style="margin-top: 15px;margin-bottom: 20px" ng-click="goToSignupView()">CREATE NEW ACCOUNT</p>
+      <!--dive for user role toggle end-->
+
+    </div>
+
+
+
+  </ion-content>
+</ion-view>

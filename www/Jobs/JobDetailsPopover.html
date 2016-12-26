@@ -1,0 +1,108 @@
+
+<ion-view class="job-details-pane ">
+  <div class="jobcontainer">
+    <div class="jobdetails">
+      <div class="jobprofile">
+        <img class="profile_pic" src="{{jobDetails.boss_profile_pic}}">
+        <div class="ratings-jobDetailsPopover">
+          <rating ng-model="rating.rate" max="rating.max" readonly="readOnly"></rating>
+        </div>
+      </div>
+      <div class="jobpdescription">
+        <div class="jobtitle">
+          {{jobDetails.name}}
+        </div>
+        <div class="jobdesc"
+             style="border-bottom: 1px solid #d8d8d8;margin-top: 5px;padding-bottom: 5px;margin-bottom: 10px;">
+          {{jobDetails.job_description}}
+        </div>
+        <!--start Location-->
+        <div class="inner-data">
+          <div class="inner-left">
+            <div class="inner-title"><span>Start Location</span></div>
+            <div class="inner-colan"><span>:</span></div>
+          </div>
+          <div class="inner-right">
+            <span>{{jobDetails.job_start_loc}}</span>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <!--end location-->
+        <div class="inner-data">
+          <div class="inner-left">
+            <div class="inner-title"><span>End Location</span></div>
+            <div class="inner-colan"><span>:</span></div>
+          </div>
+          <div class="inner-right">
+            <span>{{jobDetails.job_end_loc}}</span>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <!--Payment-->
+        <div class="inner-data">
+          <div class="inner-left">
+            <div class="inner-title"><span>Payment</span></div>
+            <div class="inner-colan"><span>:</span></div>
+          </div>
+          <div class="inner-right">
+            <span>${{jobDetails.price_for_job}}</span>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <!--Attachment-->
+        <div class="inner-data">
+          <div class="inner-left">
+            <div class="inner-title"><span><img style="width: 22px;" src="img/14_completeJobs_11.png"/></span></div>
+            <div class="inner-colan"><span>:</span></div>
+          </div>
+          <div class="inner-right">
+            <span><a href="#" ng-click="openImageViewerPopover(jobDetails.attachment)">Attachment</a></span>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <!--date-->
+        <div class="inner-data">
+          <div class="inner-left">
+            <div class="inner-title"><span>Date</span></div>
+            <div class="inner-colan"><span>:</span></div>
+          </div>
+          <div class="inner-right">
+            <span>{{jobDetails.job_complete_date}}</span>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <!--time-->
+        <div class="inner-data">
+          <div class="inner-left">
+            <div class="inner-title"><span>Time</span></div>
+            <div class="inner-colan"><span>:</span></div>
+          </div>
+          <div class="inner-right">
+            <span>{{jobDetails.job_complete_time}}</span>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <!--  <div ng-click="scrollUp()">-->
+    <textarea rows="3" type="text" class="input-proposal" ng-model="InterestJobDescription.details" id="textareaid"
+              ng-click="scrollUp()"></textarea>
+    <!--    </div>-->
+
+
+    <div style="overflow: hidden;">
+      <div class="float-left">
+        <button class="button button-block button-positive interestedbtn" ng-click="interestedInJob()">
+          {{rquestBtnText}}
+        </button>
+      </div>
+      <div class="float-right">
+        <button class="button button-block button-assertive cancelbtn" ng-click="closeJobDetailsPopup()">
+          I'll pass
+        </button>
+      </div>
+    </div>
+  </div>
+
+</ion-view>
+

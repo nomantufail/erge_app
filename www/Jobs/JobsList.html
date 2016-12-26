@@ -1,0 +1,77 @@
+<ion-view view-title="ERGE">
+  <div style="display: table;height: 100%;" class="errorClass" ng-show="onerror">
+    <h3 style="text-align: center;margin: 46px;display: table-cell;vertical-align: middle;">Sorry Some error occured
+      while getting jobs List</h3>
+  </div>
+  <ion-content ng-hide="onerror">
+
+    <div class="vertical-section">
+      <div class="section-bar">JOBS ON ({{jobson_count}})
+        <p ng-hide="onEmptyActive" class="see-all-label" ng-click="gotActiveJobList()"><a href="#">See All...</a></p>
+      </div>
+      <div ng-show="onEmptyActive" style="height: 28%;">
+        <h5 style="text-align: center;margin: 30px;">No Active jobs this time</h5>
+      </div>
+      <ion-list ng-hide="onEmptyActive">
+        <ion-item ng-repeat="item in jobs_on | limitTo: 2" ng-click="gotoActiveJob(item)">
+          <div class="title-time">
+            <div class="title-class"> {{item.l_name}}</div>
+            <div class="time-class">{{item.completion_time}}</div>
+          </div>
+          <p class="description">
+            <span>{{item.description}}</span>
+            <span><img src="img/active-past_jobs_09.png" alt=""></span>
+          </p>
+        </ion-item>
+        <!--<p class="see-all-label"><a href="#">See All...</a></p>-->
+      </ion-list>
+    </div>
+    <div class="vertical-section" ng-show="boss">
+      <div class="section-bar">PENDING JOBS ({{pendingJobs_count}})
+        <p ng-hide="onEmptyPending" class="see-all-label" ng-click="pendingJobsListView()"><a href="#">See All...</a>
+        </p>
+      </div>
+      <div ng-show="onEmptyPending" style="height: 28%;">
+        <h5 style="text-align: center;margin: 30px;">No Pending jobs this time</h5>
+      </div>
+      <ion-list ng-hide="onEmptyPending">
+        <ion-item ng-repeat="item in jobs_pending | limitTo: 2" ng-click="goToSinglePendingJobDetailsView(item)">
+          <div class="title-time">
+            <!--<div class="title-class">Car Parking</div>-->
+            <div class="time-class">{{item.completion_time}}</div>
+          </div>
+          <p class="description">
+            <span>{{item.description}}</span>
+            <span><!--<img src="img/active-past_jobs_09.png" alt="">--></span>
+          </p>
+        </ion-item>
+        <!--<p class="see-all-label" ng-click="pendingJobsListView()"><a href="#">See All...</a></p>-->
+      </ion-list>
+    </div>
+    <div class="vertical-section">
+      <div class="section-bar">FINISHED ({{finishedJobs_count}})
+        <p ng-hide="onEmptyComplete" class="see-all-label" ng-click="completedJobsListView()"><a href="#">See All...</a>
+        </p>
+      </div>
+      <div ng-show="onEmptyComplete" style="height: 28%;">
+        <h5 style="text-align: center;margin: 30px;">No Completed jobs this time</h5>
+      </div>
+
+      <ion-list ng-hide="onEmptyComplete">
+        <ion-item ng-repeat="item in jobs_completed | limitTo: 2" ng-click="goToSingleCompletedJobDetailsView(item)">
+          <div class="title-time">
+            <div class="title-class">{{item.l_name}} <!-- Hello, {{item.title}}!--></div>
+            <div class="time-class">{{item.completion_time}}</div>
+          </div>
+          <p class="description">
+            <span>{{item.description}} <!--{{item.description}}!--></span>
+            <span><!--<img src="img/active-past_jobs_09.png" alt="">--></span>
+          </p>
+        </ion-item>
+        <!--<p class="see-all-label"ng-click="completedJobsListView()"><a href="#">See All...</a></p>-->
+      </ion-list>
+    </div>
+
+  </ion-content>
+</ion-view>
+

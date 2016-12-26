@@ -1,0 +1,38 @@
+<ion-view class="bgImgdivCls">
+
+ <!-- <video autoplay loop poster="" class="bgVideo">
+
+    <source src="../img/erge-video.mp4" type="video/mp4" >
+
+  </video>-->
+
+  <div data-tap-disable="true">
+    <video class="bgVideo" controls preload="true" autoplay loop muted>
+      <source src="img/erge-video.mp4" type="video/mp4" >
+    </video>
+  </div>
+  <ion-content class="dark-video">
+    <div>
+      <div style="text-align: center;">
+        <img src="img/newLogo.png" class="mainscreen-logo">
+      </div>
+      <p class="welcome-note">WELCOME TO ERGE</p>
+      <div class="light-blue-btn" style="margin-top: 20px" ng-click="loginView()">
+        LOGIN
+      </div>
+      <div class="light-blue-btn" style="margin-top: 20px" ng-click="signupView()">
+        CREATE NEW ACCOUNT
+      </div>
+
+      <p class="FirstPageLinksCls" style="font-size: 14px;margin-top: 20px">It’s easy. In just two steps</p>
+
+      <!--<P class="FirstPageLinksCls" ng-click="signupView()">CREATE NEW ACCOUNT</P>-->
+
+<!--
+            <P class="FirstPageLinksCls" ng-click="testbutton()">test button</P>
+-->
+
+    </div>
+
+  </ion-content>
+</ion-view>

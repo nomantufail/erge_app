@@ -1,0 +1,58 @@
+<ion-view view-title="ERGE" class="bgImgdivCls">
+  <p class="jobs-title">PENDING JOBS</p>
+  <ion-content style="margin-top: 45px;">
+    <div class="detail-jobs-parent">
+      <div class="container">
+        <ion-list>
+          <ion-item ng-repeat="item in PendingJobsList" ng-click="goToSinglePendingJobDetailsView(item)" class="abc">
+            <div class="box">
+              <div class="box-header">
+                <div class="box-header-left-big">
+                 <!-- <strong>Name</strong>-->
+
+                  <p>{{item.description}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="box-body">
+                <table width="100%">
+                  <tr>
+                    <td align="right">Start Point:</td>
+                    <td class="column">{{item.start_loc}}</td>
+                  </tr>
+                  <tr>
+                    <td align="right">End Point:</td>
+                    <td class="column">{{item.dest_loc}}</td>
+                  </tr>
+                  <tr>
+                    <td align="right">Fare:</td>
+                    <td class="column">${{item.price}}</td>
+                  </tr>
+                  <tr>
+                    <td align="right"><img src="img/jobComplete_21.png" class="attachment" alt=""></td>
+                    <td class="column" style="color: #0092ef;text-decoration: underline"
+                        ng-click="openImageViewerPopover(item.attachment);$event.stopPropagation()">attachment
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">Date:</td>
+                    <td class="column">{{item.completion_date}}</td>
+                  </tr>
+                  <tr>
+                    <td align="right">Time:</td>
+                    <td class="column">{{item.completion_time}}</td>
+                  </tr>
+                  <tr>
+                    <td align="right">&nbsp;</td>
+                    <td class="column"></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

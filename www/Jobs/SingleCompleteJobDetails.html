@@ -1,0 +1,78 @@
+<ion-view view-title="ERGE" class="bgImgdivCls">
+  <p class="jobs-title">COMPLETED JOB DETAILS</p>
+  <ion-content style="margin-top: 45px;">
+    <div class="detail-jobs-parent">
+      <div class="container">
+        <div class="box">
+          <div class="box-header">
+            <div class="box-header-left-fixed">
+              <img src="{{CompletedJobDetail.profile_pic}}" alt="">
+
+              <div ng-hide="true">{{rating.rate = CompletedJobDetail.rating}}</div>
+              <rating ng-model="rating.rate" max="rating.max" readonly="readOnly"></rating>
+            </div>
+            <div class="box-header-left-complete-jobs">
+              <strong
+                style="color:#003672;font-family: RobotoBold;font-size: 18px;">{{CompletedJobDetail.l_name}}</strong>
+
+              <div ng-hide="true">{{rating.single_job_rate = CompletedJobDetail.single_rating}}</div>
+              <rating ng-model="rating.single_job_rate" max="rating.max" readonly="readOnly"></rating>
+              <p style="margin-left: 10px;color: #003672;font-family: RobotoLight;">(job rating)</p>
+
+            </div>
+            <div class="box-header-right">
+              <img class="complete-job-call-img" src="img/jobComplete_14.png" alt=""
+                   ng-click="callNumber(CompletedJobDetail.mobile_no)">
+              <img class="complete-job-call-img" src="img/jobComplete_18.png" alt="" ng-click="sendmessege()">
+            </div>
+            <div class="box-header-left" style="width: 100%">
+              <p style="font-family: RobotoRegular;font-weight: bold;color:#003672">Description</p>
+
+              <p style="margin-top: 10px;color: #5f5f5f;font-family: RobotoLight">{{CompletedJobDetail.description}}</p>
+            </div>
+
+
+          </div>
+          <hr>
+          <div class="box-body">
+            <table width="100%">
+              <tr>
+                <td align="right">Start Point:</td>
+                <td class="column">{{CompletedJobDetail.start_loc}}</td>
+              </tr>
+              <tr>
+                <td align="right">End Point:</td>
+                <td class="column">{{CompletedJobDetail.dest_loc}}</td>
+              </tr>
+              <tr>
+                <td align="right">Fare:</td>
+                <td class="column">${{CompletedJobDetail.price}}</td>
+              </tr>
+              <tr>
+                <td align="right">Date:</td>
+                <td class="column">{{CompletedJobDetail.completion_date}}</td>
+              </tr>
+              <tr>
+                <td align="right">Time:</td>
+                <td class="column">{{CompletedJobDetail.completion_time}}</td>
+              </tr>
+              <tr>
+                <td align="right">Duration:</td>
+                <td class="column">{{CompletedJobDetail.jobCompleteDuration}}</td>
+              </tr>
+              <tr>
+                <td align="right">&nbsp;</td>
+
+            </table>
+          </div>
+          <!--<hr>-->
+          <div class="box-bottom-center"><img src="{{CompletedJobDetail.attachment}}" alt=""
+                                              ng-click="openImageViewerPopover(CompletedJobDetail.attachment)"></div>
+          <!--<p style="text-align: center;text-decoration: underline;color: #0092ef">attachment</p>-->
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

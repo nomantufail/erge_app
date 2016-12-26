@@ -1,0 +1,63 @@
+<ion-view view-title="ERGE" class="">
+  <ion-content>
+
+    <div class="container">
+      <div class="success-msg">
+        <h4>PAYMENT</h4>
+        <p class="comple-jon-msg">TOTAL BALANCE : <b>{{conscierge_paymentDetails.current_balance}} $ </b></p>
+        <p class="comple-jon-msg">REQUESTED AMMOUNT : <b>{{conscierge_paymentDetails.requested_amount}} $ </b></p>
+      </div>
+      <div class="complete-job-contant">
+        <div class="complete-job-center-contant">
+          <div class="form-group">
+            <label>WITHDRAW AMMOUNT</label>
+            <input type="number" ng-model="conscierge_paymentDetails.ammount" class="form-textbox">
+          </div>
+          <div class="form-group">
+            <label>PAYPAL EMAIL</label>
+            <input type="text" ng-model="conscierge_paymentDetails.email" class="form-textbox">
+          </div>
+          <div class="form-group">
+            <label>PASSWORD</label>
+            <input type="password" ng-model="conscierge_paymentDetails.password" class="form-textbox">
+          </div>
+        </div>
+
+
+        <!--<div class="complete-job-contant-right">
+          <div class="user-img"><img src="{{jobDetailsForComplete.profile_pic}}" alt=""> </div>
+          <h4>{{jobDetailsForComplete.l_name}}</h4>
+          <div class="rating-stars">
+            <rating ng-model="jobDetailsForComplete.rating" readonly="readOnly"></rating>
+            &lt;!&ndash;<div class="pratings1">
+              <i class="ion-ios-star"></i>
+              <i class="ion-ios-star"></i>
+              <i class="ion-ios-star"></i>
+              <i class="ion-ios-star"></i>
+              <i class="ion-ios-star"></i>
+            </div>&ndash;&gt;
+
+          </div>
+        </div>-->
+        <div class="clear"></div>
+      </div>
+      <div class="complete-job-center-contant">
+        <!--<h4>How did it go?</h4>
+        <div class="rating-stars">
+          <rating ng-model="rating.rate" max="rating.max"></rating>
+          &lt;!&ndash;<div class="pratings1">
+            <i class="ion-ios-star"></i>
+            <i class="ion-ios-star"></i>
+            <i class="ion-ios-star"></i>
+            <i class="ion-ios-star"></i>
+            <i class="ion-ios-star"></i>
+          </div>&ndash;&gt;
+
+        </div>-->
+        <div class="complete-job-center-contant-btn"><input type="button" value="WITHDRAW" ng-click="withdrawRequest()"> </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
+

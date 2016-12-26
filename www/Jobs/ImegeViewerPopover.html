@@ -1,0 +1,19 @@
+<ion-popover-view title="image" class="imegeViewerPopup">
+  <div style="position: absolute;right: 0;">
+    <img src="img/jobComplete_03.png" style="float: right;height: 35px;"  ng-click="closePopoverimgView()">
+  </div>
+
+  <div class="image-viewer-container">
+      <div class="image-viewer-div">
+        <img src="{{image_file_uri}}" class="img-for-job" ng-style="getStyleForImgViewer()">
+
+
+     </div>
+    <div class="image-viewer">
+      <p ng-show="ImgViewerDeleteBtn" class="ing-view-delete-btn" ng-click="deleteimgFun()">DELETE</p>
+    </div>
+
+  </div>
+
+
+</ion-popover-view>

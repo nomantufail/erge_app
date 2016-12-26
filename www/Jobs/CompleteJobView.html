@@ -1,0 +1,43 @@
+<ion-view view-title="ERGE" class="">
+  <ion-content>
+
+    <div class="container">
+      <div class="success-msg">
+        <h4>Completed !</h4>
+        <p class="comple-jon-msg">You and <b>{{jobDetailsForComplete.l_name}}</b> agree the job is completed.</p>
+      </div>
+      <div class="complete-job-contant">
+        <h4>Summry</h4>
+        <div class="complete-job-contant-left">
+          <div class="form-group">
+            <input type="text" value={{jobCompleteDuration}} class="form-textbox" disabled>
+          </div>
+          <div class="form-group">
+            <input type="text" value="$ {{jobDetailsForComplete.price}}" class="form-textbox" disabled>
+          </div>
+          <div class="form-group">
+            <label>Bonus</label>
+            <input type="number" ng-model="job.bonus" class="form-textbox" ng-disabled="editBonus">
+          </div>
+        </div>
+        <div class="complete-job-contant-right">
+          <div class="user-img"><img src="{{jobDetailsForComplete.profile_pic}}" alt=""> </div>
+          <h4>{{jobDetailsForComplete.l_name}}</h4>
+          <div class="rating-stars">
+            <rating ng-model="jobDetailsForComplete.rating" readonly="readOnly"></rating>
+          </div>
+        </div>
+        <div class="clear"></div>
+        </div>
+      <div class="complete-job-center-contant">
+        <h4>How did it go?</h4>
+        <div class="rating-stars">
+          <rating ng-model="rating.rate" max="rating.max"></rating>
+        </div>
+        <div class="complete-job-center-contant-btn"><input type="button" value="SUBMIT" ng-click="submitButtonFunction()"> </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
+

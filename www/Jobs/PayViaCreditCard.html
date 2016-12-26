@@ -1,0 +1,33 @@
+<!--<ion-view view-title="ERGE" class="bgImgdivCls" >-->
+<ion-view view-title="ERGE" class="bgImgdivCls">
+  <ion-content>
+    <div class="container">
+
+      <div class="form-group">
+        <label class="white-label">CREDIT CARD</label>
+        <form id="paymentFormId" name="paymentForm">
+          <input class="input-group" id="card_number" type="text" ng-model="BankDetails.card_number" name="cardNumber"/>
+        </form>
+
+      </div>
+      <div class="form-group">
+        <div class="float-left">
+          <label class="white-label">EXP DATE</label>
+
+          <ionic-datepicker input-obj="datepickerObject">
+            <label class="input-group" style="line-height: 30px;text-align: center;"> {{datepickerObject.showdate}}</label>
+          </ionic-datepicker>
+        </div>
+        <div class="float-right">
+          <label class="white-label">CVC</label>
+          <input type="text" class="input-group" ng-model="BankDetails.cvc">
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="button" value="COMPLETE JOB" class="btn" style="background-color: #003672" ng-click="completeJobPayingViaCreditCard()">
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+

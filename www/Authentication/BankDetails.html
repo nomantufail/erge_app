@@ -1,0 +1,69 @@
+<!--<ion-view view-title="Group Order" class="bgImgdivCls" >
+  <ion-nav-buttons side="right">
+    <button class="button icon ion-edit"></button>
+  </ion-nav-buttons>-->
+<ion-view class="bgImgdivCls">
+  <ion-content>
+    <!--<div class="btn">-->
+      <!--<img src="img/{{image_b}}" class="" style="">-->
+    <!--</div>-->
+
+    <div class="top-bar">
+      <div class="">
+        <span style="padding: 5px;height: 20px;" ><img src="img/chat_06.png" class="small-icon" ng-click="bankDetailBack()"></span>
+        <span>ERGE</span>
+        <!--<span><img src="img/email_icon.png" class="small-icon"></span>-->
+      </div>
+    </div>
+
+    <!--main parent div-->
+    <!--<div>
+      <h1 class="btn" style="background-color: #003672;line-height: 40px;">ERGE</h1>
+      <a class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+    </div>-->
+    <div class="container">
+
+      <p class="payment-label">PAYMENT</p>
+
+      <div class="form-group">
+        <div class="float-left">
+          <i class="" ng-click="setPaymentMethodPaypal()">
+            <img src="img/{{image_b}}" class="userRoleToggle" style="margin-bottom: 4px;">
+          </i>
+          <img src="img/paypal.png" class="pamentmethodimg">
+        </div>
+        <div class="float-right">
+          <i class="" ng-click="setPaymentMethodVisa()">
+            <img src="img/{{image_c}}" class="userRoleToggle" style="margin-bottom: 4px;">
+          </i>
+          <img src="img/visa.png" class="pamentmethodimg">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="white-label">CREDIT CARD</label>
+        <form id="paymentFormId" name="paymentForm">
+          <input class="input-group" id="card_number" type="text" ng-model="BankDetails.card_number" name="cardNumber"/>
+        </form>
+
+      </div>
+      <div class="form-group">
+        <div class="float-left">
+          <label class="white-label">EXP DATE</label>
+
+          <ionic-datepicker input-obj="datepickerObject">
+            <label class="input-group" style="line-height: 30px;text-align: center;"> {{datepickerObject.inputDate | date:datepickerObject.dateFormat}}</label>
+          </ionic-datepicker>
+        </div>
+        <div class="float-right">
+          <label class="white-label">CVC</label>
+          <input type="text" class="input-group" ng-model="BankDetails.cvc">
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="button" value="SAVE" class="btn" style="background-color: #003672" ng-click="saveBankDetailFun()">
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+

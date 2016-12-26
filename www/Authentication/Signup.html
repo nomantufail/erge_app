@@ -1,0 +1,87 @@
+<ion-view class="bgImgdivCls">
+  <ion-content>
+    <!--main parent div-->
+    <div class="container">
+      <!--logo div-->
+      <div class="logo">
+        <img src="img/logo.png">
+      </div>
+      <p class="signup-heading">SIGN UP</p>
+
+      <p class="signup-role">WHO WILL YOU BE?</p>
+      <!--user role button div start-->
+      <div class="form-group">
+        <div class="float-left">
+          <input type="button" value="BOSS" class="btn" style="background-color:{{color_on}}" ng-click="setRoleBosss()">
+        </div>
+        <div class="float-right">
+          <input type="button" value="CONCIERGE" class="btn" style="background-color:{{color_off}}"
+                 ng-click="setRoleCons()">
+        </div>
+      </div>
+      <!--user role buttons div end-->
+      <!--data fields div start-->
+      <div class="form-group">
+        <div class="float-left">
+          <label class="white-label">FIRST NAME</label>
+          <input type="text" class="input-group" ng-model="signUpData.f_name">
+        </div>
+        <div class="float-right">
+          <label class="white-label">LAST NAME</label>
+          <input type="text" class="input-group" ng-model="signUpData.l_name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="white-label">EMAIL</label>
+        <input type="text" class="input-group" ng-model="signUpData.email">
+      </div>
+
+      <div class="form-group">
+        <div class="float-left">
+          <label class="white-label">PASSWORD</label>
+          <input type="text" class="input-group" ng-model="signUpData.password">
+        </div>
+        <div class="float-right">
+          <label class="white-label">RE-PASSWORD</label>
+          <input type="text" class="input-group" ng-model="signUpData.confirmPassword">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="white-label">MOBILE</label>
+        <input type="number" class="input-group" ng-model="signUpData.mobile">
+      </div>
+
+      <div class="form-group">
+        <!--<div class="float-left">-->
+        <input type="button" value="GET YOUR EMAIL VERIFICATION CODE" class="btn"
+               style="background-color: #3f8c00;font-size: 15px; margin-top: 18px;" ng-click="verifyMail()">
+        <!--</div>-->
+        <!--<div class="float-right">
+          <label class="white-label">VERIFICATION CODE</label>
+          <input type="text" class="input-group" ng-model="signUpData.emailCode">
+        </div>-->
+
+      </div>
+      <div class="form-group" ng-hide="verificationField">
+        <label class="white-label">EMAIL VERIFICATION CODE</label>
+        <input type="text" class="input-group" ng-model="signUpData.emailCode">
+      </div>
+
+      <!-- <ion-checkbox class="termAndConditionCheckBox checkbox-positive" ng-model="isCheckedTC">You have to agree on out <b>Terms and condition</b></ion-checkbox>-->
+      <div>
+        <i class="fa fa-check-circle termAndConditionCheckBox" ng-click="termAndConditionCheckBox()"
+           ng-show="changeCheck"></i>
+        <i class="fa fa-circle-o termAndConditionCheckBox" ng-click="termAndConditionCheckBox()"
+           ng-hide="changeCheck"></i>
+        <span><p class="term-condition">You have to agree on our <u ng-click="showTermAndConditionsPopup()">Terms & Conditions</u></p></span>
+      </div>
+      <div class="form-group">
+        <input type="button" value="SAVE" class="btn" style="background-color: #003672" ng-click="signup()">
+      </div>
+
+
+      <!--data fields div start-->
+    </div>
+  </ion-content>
+</ion-view>

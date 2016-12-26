@@ -1,0 +1,133 @@
+/* Empty. Add your own CSS if you like */
+.roboto {
+  font-family: "SayWeb", "Roboto", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.roboto input {
+  font-family: "SayWeb", "Roboto", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+@font-face {
+  font-family: 'RobotoLight';
+  src: url('Roboto-Light.ttf');
+  src: url('Roboto-Light.ttf') format('truetype'),
+  url('Roboto-Light.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'mangolia';
+  src: url('Mangolia.ttf');
+  src: url('Mangolia.ttf') format('truetype'),
+  url('Mangolia.ttf') format('truetype')
+}
+.profile-item{
+  height: 120px;
+  border-bottom: 1px solid #fff;
+  position: relative;
+  margin-top: 20px;
+}
+.profile-item > img{
+  position: absolute;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  border: 4px solid #fff;
+
+}
+.meta-info{
+  margin-left: 110px;
+  padding-top: 8px;
+}
+.profile-edit-icon{
+  position: absolute;
+  right: 0px;
+  top: 27px;
+  width: 42px;
+}
+.profile-name{
+  margin-right: 50px;
+}
+.pratings{
+  margin-top: 3px;
+}
+.pratings i{
+  font-size: 20px;
+  color:#daf2ff;
+}
+.ratings{
+  margin-top: 3px;
+}
+.ratings i{
+  font-size: 15px;
+  color: orange;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll {
+  height: 100%;
+}
+.jdPopover {
+  overflow: hidden;
+  width: 90% !important;
+  top: 170px !important;
+  left: 5%;
+  margin-left: 0px;
+  opacity: 1;
+  height: auto;
+}
+.jobprofile{
+  width: 90px;
+  height: 90px;
+  position: absolute;
+}
+.jobcontainer{
+  margin:15px;
+}
+.jobdetails{
+  position: relative;
+  min-height: 120px;
+  border-bottom: 1px solid #bbb;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+.profile_pic{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: 4px solid #666;
+}
+.jobpdescription{
+  margin-left: 90px;
+  font-size: 12.5px;
+}
+.jobtitle{
+  color: #005f96;
+  font-size: 15px;
+}
+.detailtable{
+  display: table;
+}
+.tablerow{
+  display: table-row;
+}
+.tablecellleft,
+.tablecell{
+  display: table-cell;
+  padding-bottom: 5px;
+}
+.tablecellleft{
+  color: #005f96;
+  padding-right: 10px;
+  text-align: right;
+}
+.input-proposal{
+  width: 100%;
+  border: 1px solid #bbb;
+}
+.interestedbtn,
+.cancelbtn{
+  border-radius:0px;
+  padding: 0 10px;
+  margin-bottom: 15px !important;
+  margin-top: 15px !important;
+}

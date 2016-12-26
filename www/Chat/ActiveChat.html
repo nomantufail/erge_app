@@ -1,0 +1,51 @@
+
+<ion-view>
+  <div class="title-bar">
+    <img src="{{userDataForChat.profile_pic}}" alt="">
+    <h3 class="title-name">{{userDataForChat.l_name}}
+      <!--<span><img src="{{userDataForChat.profile_pic}}" alt=""></span>-->
+    </h3>
+  </div>
+  <ion-content style="top: 130px;bottom: 70px;"  delegate-handle="mainScroll">
+    <!--<simple-chat
+      messages="messages"
+      local-user="you">
+
+    </simple-chat>-->
+    <!--<ion-scroll direction="y">-->
+
+    <!--<ion-scroll class="chat-holder" delegate-handle="mainScroll">-->
+      <ion-refresher
+        pulling-text="getting older messeges..."
+        on-refresh="getMoreMesseges()"
+        spinner="ios-small">
+
+      </ion-refresher>
+      <!--<div class="chat-container" id="chat-messege" scroll="false">-->
+        <!--<ion-list class="chat-list" scroll="false">-->
+          <ion-item  class="mgs-list" ng-repeat="item in messeges track by $index">
+            <div class="sender-box" ng-if="item.user_type==1">
+            <span>
+              {{item.chat_message}}
+            </span>
+              <span style="display: block; font-size: 11px;">{{item.created_at}}</span>
+            </div>
+            <div class="reciever-box" ng-if="item.user_type==0">
+              <span> {{item.chat_message}}</span>
+              <span style="display: block; font-size: 11px;">{{item.created_at}}</span>
+
+            </div>
+          </ion-item>
+        <!--</ion-list>-->
+      <!--</div>-->
+    <!--  </ion-scroll>-->
+    <!--</ion-scroll>-->
+
+  </ion-content>
+  <div class="type-msg">
+    <textarea class="msg-text" placeholder="type your messege here" ng-model="messege.text"></textarea>
+    <button class="chat-send-btn" ng-click="sendMessege()">Send</button>
+
+  </div>
+</ion-view>
+

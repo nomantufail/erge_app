@@ -1,0 +1,84 @@
+<!--PostJobCtrl-->
+<ion-view view-title="ERGE">
+  <ion-content>
+    <div class="jobDetails-container">
+      <!--destination location-->
+      <div class="blocks">
+        <span>DESTINATION LOCATION</span>
+
+        <p><input type="text" ng-model="details_for_postJob.startLocation" class="large-box" disabled></p>
+        <!-- <div class="edit-img"><img src="img/Profile_edit_off.png" alt=""> </div>-->
+      </div>
+      <div class="blocks">
+        <!--End location location-->
+        <span>END LOCATION</span>
+
+        <p><input type="text" ng-model="details_for_postJob.endLocation" class="large-box" disabled></p>
+        <!--<div class="edit-img"><img src="img/Profile_edit_off.png" alt=""> </div>-->
+      </div>
+      <div class="blocks">
+        <!--Job details-->
+        <span>JOB DESCRIPTION</span>
+
+        <p><input type="text" ng-model="details_for_postJob.jobDedcription" class="large-box"
+                  ng-disabled="editorEnabled"></p>
+
+        <div class="edit-img" ng-click="editDiscripttion()"><img src="img/{{editbutton}}" alt=""></div>
+      </div>
+      <!--set fair for job-->
+      <div class="blocks">
+        <span>REWARDS ($)</span>
+        <span><input type="number" ng-model="details_for_postJob.job_price" class="reward-box"></span>
+      </div>
+      <div class="blocks">
+        <!--Date Picker-->
+        <span style="display: block">NEED COMPLETED ON</span>
+        <span class="completed-job">
+          <ionic-datepicker input-obj="datepickerObject">
+            <label class="completed-job-box" style="line-height: 30px;text-align: center;">
+              {{datepickerObject.showdate}}</label>
+          </ionic-datepicker>
+        </span>
+
+        <!--<input type="text" value="26-01-2016" class="completed-job-box">-->
+        <span class="calender-icon"><img src="img/calendar_03.png" alt="">
+
+        <span>
+
+        <ionic-timepicker input-obj="timePickerObject">
+          <label style="align-content: flex-end; margin-left: 10px;" ng-model="selectedDate.secTime">
+            <standard-time-meridian etime='timePickerObject.inputEpochTime'></standard-time-meridian>
+            {{selectedDate.secTime}}
+          </label>
+        </ionic-timepicker>
+
+        </span>
+
+
+        </span>
+        <!-- time Picker-->
+
+      </div>
+      <!--Set radioud for search job-->
+      <div class="blocks" style="padding-bottom: 45px;">
+        <span>JOB VISIBILITY RADIUS (miles)</span>
+        <span><input type="number" ng-model="details_for_postJob.job_radius" class="reward-box"></span>
+      </div>
+    </div>
+    <!--post job button-->
+    <div class="job-detail-bottom">
+      <span class="job-icon" ng-show="chnageCamraIcon"><img src="img/14_PostJob_11.png" alt=""
+                                                            ng-click="showActionsheet()"></span>
+
+      <span class="job-icon" ng-hide="chnageCamraIcon"><img src="img/14_completeJobs_11.png" alt=""
+                                                            ng-click="openImageViewerPopover($event)"></span>
+      <!--showConResPopOver openImageViewerPopover-->
+      <span class="post-btn"><input type="button" value="POST" ng-click="postJob()"></span>
+    </div>
+    <!--openPostJobPopover($event)-->
+    <!-- my-pop-over="Jobs/PostJobPopover.html" ng-click="openPopover($event)"
+     my-pop-over="Jobs/ImegeViewerPopover.html" ng-click="openPostJobPopover($event)"-->
+
+  </ion-content>
+</ion-view>
+

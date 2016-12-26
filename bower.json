@@ -1,0 +1,19 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.2.4",
+    "underscore": "~1.8.3",
+    "angular-underscore-module": "~1.0.3"
+  },
+  "dependencies": {
+    "ionic-datepicker": "~0.9.0",
+    "angular-moment": "~0.10.3",
+    "moment": "~2.11.1",
+    "ionic-timepicker": "~0.4.0",
+    "moment-timezone": "~0.5.0",
+    "ionic-ratings": "~0.2.0",
+    "font-awesome": "fontawesome#~4.5.0",
+    "angular-simple-chat": "~1.0.10"
+  }
+}
