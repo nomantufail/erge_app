@@ -490,14 +490,14 @@ angular.module('erge.Authentication', [])
         Utils.showToast("Enter mobile no!", 'short');
         return;
       }
-      else if ($scope.signUpData.emailCode == "") {
-        Utils.showToast("Enter email verification code", 'short');
-        return;
-      }
-      else if ($scope.changeCheck == false) {
-        Utils.showToast("You have to agree our terms and conditions", 'short');
-        return;
-      }
+      //else if ($scope.signUpData.emailCode == "") {
+      //  Utils.showToast("Enter email verification code", 'short');
+      //  return;
+      //}
+      //else if ($scope.changeCheck == false) {
+      //  Utils.showToast("You have to agree our terms and conditions", 'short');
+      //  return;
+      //}
       else {
         $ionicLoading.show();
         //console.log($scope.signUpData);
@@ -617,10 +617,10 @@ angular.module('erge.Authentication', [])
     console.log('StartScreenCtrl');
     $scope.loginView = function () {
       $state.go('login');
-    }
+    };
     $scope.signupView = function () {
       $state.go('signup');
-    }
+    };
     $scope.testbutton = function () {
       $state.go('app.chat', {data: 36});
     }
