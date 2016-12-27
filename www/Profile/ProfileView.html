@@ -2,6 +2,26 @@
   <ion-content>
     <!--main parent div-->
     <div class="container">
+      <div class="user-info">
+        <figure>
+          <img src={{profileData.profile_pic}} ng-click="showActionsheet()">
+        </figure>
+        <figcaption>
+          <rating ng-model="rating.rate" max="rating.max" readonly="readOnly"></rating>
+          <h4>
+            <span>{{profileData.roll}}</span>
+            <img class="profile-edit-icon" src="img/{{editbutton}}" ng-click="editButtonFunction()">
+          </h4>
+        </figcaption>
+      </div>
+      <div class="user-class">
+        <h4>USER CLASS</h4>
+        <div class="btn-group">
+          <button class="blue-btn">{{profileData.roll}}</button>
+          <button class="darkblue-btn">CONECIERGE</button>
+          <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.</p>
+        </div>
+      </div>
       <!--logo div-->
       <div class="profile-item">
         <img src={{profileData.profile_pic}} ng-click="showActionsheet()">
