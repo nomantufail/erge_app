@@ -1,0 +1,13 @@
+.user-info{
+	figure{
+		width: 100px;
+		height: 100px;
+		overflow: hidden;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	.figcaption{
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
