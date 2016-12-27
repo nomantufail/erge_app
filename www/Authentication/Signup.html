@@ -6,22 +6,66 @@
       <div class="logo">
         <img src="img/logo.png">
       </div>
-      <p class="signup-heading">SIGN UP</p>
+      <div class="login-text">
+        <h3>Sign Up</h3>
+        <h4>WHO WILL YOU BE?</h4>
+      </div>
+      <div class="btn-group">
+        <button class="blue-btn" ng-click="setRoleBosss()">Boss</button>
+        <button class="darkblue-btn" ng-click="setRoleCons()">CONECIERGE</button>
+        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.</p>
+      </div>
+      <div class="form-field">
+        <label class="half-field">
+          <span>First Name</span>
+          <input type="text" ng-model="signUpData.f_name">
+        </label>
+        <label class="half-field">
+          <span>Last Name</span>
+          <input type="text" ng-model="signUpData.l_name">
+        </label>
+        <label class="full-field">
+          <span>Mobile Number</span>
+          <input type="number" ng-model="signUpData.mobile">
+        </label>
+        <label class="full-field">
+          <span>Email ID</span>
+          <input type="email" ng-model="signUpData.email">
+        </label>
+        <label class="half-field">
+          <span>Password</span>
+          <input type="password" class="input-group" ng-model="signUpData.password">
+        </label>
+        <label class="half-field">
+          <span>Re-Password </span>
+          <input type="password" ng-model="signUpData.confirmPassword">
+        </label>
+        <label>
+          <button class="blue-btn" ng-click="verifyMail()">Start</button>
+        </label>
+        <p>Already a user? <a href="">Login Now</a></p>
+      </div>
+      
 
-      <p class="signup-role">WHO WILL YOU BE?</p>
+
+
+
+      <!-- <p class="signup-heading">SIGN UP</p>
+
+      <p class="signup-role">WHO WILL YOU BE?</p> -->
+      
       <!--user role button div start-->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <div class="float-left">
-          <input type="button" value="BOSS" class="btn" style="background-color:{{color_on}}" ng-click="setRoleBosss()">
+          <input type="button" value="BOSS" ng-click="setRoleBosss()">
         </div>
         <div class="float-right">
-          <input type="button" value="CONCIERGE" class="btn" style="background-color:{{color_off}}"
-                 ng-click="setRoleCons()">
+          <input type="button" value="CONCIERGE" ng-click="setRoleCons()">
         </div>
-      </div>
+      </div> -->
       <!--user role buttons div end-->
       <!--data fields div start-->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <div class="float-left">
           <label class="white-label">FIRST NAME</label>
           <input type="text" class="input-group" ng-model="signUpData.f_name">
@@ -52,24 +96,24 @@
         <input type="number" class="input-group" ng-model="signUpData.mobile">
       </div>
 
-      <div class="form-group">
+      <div class="form-group"> -->
         <!--<div class="float-left">-->
-        <input type="button" value="GET YOUR EMAIL VERIFICATION CODE" class="btn"
-               style="background-color: #3f8c00;font-size: 15px; margin-top: 18px;" ng-click="verifyMail()">
+        <!-- <input type="button" value="GET YOUR EMAIL VERIFICATION CODE" class="btn"
+               style="background-color: #3f8c00;font-size: 15px; margin-top: 18px;" ng-click="verifyMail()"> -->
         <!--</div>-->
         <!--<div class="float-right">
           <label class="white-label">VERIFICATION CODE</label>
           <input type="text" class="input-group" ng-model="signUpData.emailCode">
         </div>-->
 
-      </div>
+      <!-- </div>
       <div class="form-group" ng-hide="verificationField">
         <label class="white-label">EMAIL VERIFICATION CODE</label>
         <input type="text" class="input-group" ng-model="signUpData.emailCode">
-      </div>
+      </div> -->
 
       <!-- <ion-checkbox class="termAndConditionCheckBox checkbox-positive" ng-model="isCheckedTC">You have to agree on out <b>Terms and condition</b></ion-checkbox>-->
-      <div>
+      <!-- <div>
         <i class="fa fa-check-circle termAndConditionCheckBox" ng-click="termAndConditionCheckBox()"
            ng-show="changeCheck"></i>
         <i class="fa fa-circle-o termAndConditionCheckBox" ng-click="termAndConditionCheckBox()"
@@ -78,7 +122,7 @@
       </div>
       <div class="form-group">
         <input type="button" value="SAVE" class="btn" style="background-color: #003672" ng-click="signup()">
-      </div>
+      </div> -->
 
 
       <!--data fields div start-->

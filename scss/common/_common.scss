@@ -1,0 +1,39 @@
+.blue-btn{
+  border-radius: 5px;
+  font-weight: bold;
+  color: #FFF;
+  font-size: 16px;
+  background: -moz-linear-gradient(left,  #41eeee 0%, #00b3f3 100%);
+  background: -webkit-linear-gradient(left,  #41eeee 0%,#00b3f3 100%);
+  background: linear-gradient(to right,  #41eeee 0%,#00b3f3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41eeee', endColorstr='#00b3f3',GradientType=1 );
+  border: 0px;
+  padding: 10px 0;
+}
+
+.darkblue-btn{
+	@extend .blue-btn;
+	background: #142342;
+	background: -moz-linear-gradient(left,  #142342 0%, #1b2e4b 100%);
+	background: -webkit-linear-gradient(left,  #142342 0%,#1b2e4b 100%);
+	background: linear-gradient(to right,  #142342 0%,#1b2e4b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#142342', endColorstr='#1b2e4b',GradientType=1 );
+}
+
+
+.bgImgdivCls {
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo {
+  text-align: center;
+  max-width: 30%;
+  margin: 30px auto 10px;
+}
+
+.logo img {
+  max-width: 100%;
+}
+
