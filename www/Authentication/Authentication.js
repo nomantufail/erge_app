@@ -157,13 +157,13 @@ angular.module('erge.Authentication', [])
          Utils.showToast('Some error occued while login, try gain', 'short');
          })*/
       }
-    }
+    };
 
     //  console.log($scope.loginFieldsData.password);
 
     $scope.goToSignupView = function () {
       $state.go('signup');
-    }
+    };
 
     $scope.popover = $ionicPopover.fromTemplate('Authentication/ForgetPassword.html', {
       scope: $scope
