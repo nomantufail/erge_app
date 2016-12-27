@@ -24,7 +24,7 @@
           <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.</p>
         </div>
       </div>
-      <div class="form-field">
+      <div class="profile-form-field">
         <label class="full-field">
           <span>My Location</span>
           <input type="text" placeholder="Enter your home address, Apt# and ZIP" ng-model="profileData.location" googleplace="" class="ng-pristine ng-valid" autocomplete="off" ng-disabled="editorEnabled">
@@ -48,15 +48,20 @@
           <input type="button" value="SAVE" class="blue-btn"               ng-click="saveprofile()">
         </label>
       </div>
+      
+
+
+
+
       <!--logo div-->
-      <div class="profile-item">
+      <!-- <div class="profile-item">
         <img src={{profileData.profile_pic}} ng-click="showActionsheet()">
 
         <div class="meta-info">
           <div class="profile-name">
             <label class="userclass-label">USER CLASS</label>
             <label class="user-role-label">{{profileData.roll}}</label>
-            <rating ng-model="rating.rate" max="rating.max" readonly="readOnly"></rating>
+            <rating ng-model="rating.rate" max="rating.max" readonly="readOnly"></rating> -->
             <!--<ionic-ratings ratingsobj='ratingsObject'></ionic-ratings>-->
            <!-- <div class="pratings">
               <i class="ion-ios-star"></i>
@@ -65,15 +70,15 @@
               <i class="ion-ios-star"></i>
               <i class="ion-ios-star"></i>
             </div>-->
-          </div>
+          <!-- </div>
           <img class="profile-edit-icon" src="img/{{editbutton}}" ng-click="editButtonFunction()">
 
         </div>
-      </div>
+      </div> -->
       <!--user role button div start-->
       <!--<progress max="100" value="0" id="prog" ng-show="{{showprogess}}" style="width: 70%"></progress>-->
 
-      <div class="form-group">
+      <!-- <div class="form-group"> -->
         <!-- <div class="float-left">
           <label class="white-label">FIRST NAME</label>
           <input type="text" class="input-group" ng-model="profileData.f_name"  ng-disabled="editorEnabled">
@@ -82,19 +87,19 @@
           <label class="white-label">LAST NAME</label>
           <input type="text" class="input-group" ng-model="profileData.l_name"  ng-disabled="editorEnabled">
         </div> -->
-      </div>
+      <!-- </div> -->
       <!--data fields div start-->
-      <div class="form-group" style="position: relative">
-        <label class="item item-input" style="background: #daf2ff;padding: 0 5px;border: none;line-height: 12px;">
+      <!-- <div class="form-group" style="position: relative">
+        <label class="item item-input" style="background: #daf2ff;padding: 0 5px;border: none;line-height: 12px;"> -->
           <!--<i class="icon ion-person placeholder-icon">-->
-          <i class="">
+          <!-- <i class="">
             <img src="img/Profile_07.png" class="textFieldIconsCls">
-          </i>
+          </i> -->
           <!--<input type="text" id="autocomplete"  onFocus="geolocate()" ng-model="profileData.location" ng-disabled="editorEnabled" />-->
-          <input type="text" placeholder="Enter your home address, Apt# and ZIP" ng-model="profileData.location" googleplace="" class="ng-pristine ng-valid" autocomplete="off" ng-disabled="editorEnabled">
+          <!-- <input type="text" placeholder="Enter your home address, Apt# and ZIP" ng-model="profileData.location" googleplace="" class="ng-pristine ng-valid" autocomplete="off" ng-disabled="editorEnabled"> -->
           <!-- googleplace -->
 
-        </label>
+        <!-- </label>
       </div>
       <div class="form-group">
         <label class="white-label">MOBILE</label>
@@ -112,7 +117,7 @@
       <div class="form-group">
         <input type="button" value="SAVE" class="btn" style="background-color: #003672;border: none;"
                ng-click="saveprofile()">
-      </div>
+      </div> -->
       <!--data fields div start-->
     </div>
   </ion-content>

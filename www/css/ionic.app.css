@@ -13550,20 +13550,20 @@ ion-item.interested-ppl.item {
     color: #FFF;
     font-size: 11px; }
 
-.form-field {
+.form-field, .profile-form-field {
   margin: 0 -5px 20px;
   overflow: hidden; }
-  .form-field label {
+  .form-field label, .profile-form-field label {
     display: block;
     margin-bottom: 10px;
     padding: 0px 5px;
     overflow: hidden; }
-    .form-field label.full-field span, .form-field label.half-field span {
+    .form-field label.full-field span, .profile-form-field label.full-field span, .form-field label.half-field span, .profile-form-field label.half-field span {
       display: block;
       color: #FFF;
       font-synthesis: 14px;
       margin-bottom: 5px; }
-    .form-field label.full-field input, .form-field label.half-field input {
+    .form-field label.full-field input, .profile-form-field label.full-field input, .form-field label.half-field input, .profile-form-field label.half-field input {
       width: 100%;
       background: rgba(0, 0, 0, 0.1);
       border-radius: 5px;
@@ -13571,7 +13571,7 @@ ion-item.interested-ppl.item {
       padding: 10px !important;
       color: #FFF;
       border: 0px; }
-    .form-field label.full-field textarea, .form-field label.half-field textarea {
+    .form-field label.full-field textarea, .profile-form-field label.full-field textarea, .form-field label.half-field textarea, .profile-form-field label.half-field textarea {
       width: 100%;
       background: rgba(0, 0, 0, 0.1);
       border-radius: 5px;
@@ -13579,14 +13579,14 @@ ion-item.interested-ppl.item {
       padding: 10px !important;
       color: #FFF;
       border: 0px; }
-    .form-field label.half-field {
+    .form-field label.half-field, .profile-form-field label.half-field {
       float: left;
       width: 50%; }
-    .form-field label button {
+    .form-field label button, .profile-form-field label button {
       width: 100%;
       text-transform: uppercase;
       margin-top: 20px; }
-  .form-field p {
+  .form-field p, .profile-form-field p {
     color: #FFF;
     text-align: center; }
 
@@ -13622,34 +13622,49 @@ ion-item.interested-ppl.item {
 .logo img {
   max-width: 100%; }
 
-.user-info figure {
-  width: 80px;
-  height: 80px;
-  overflow: hidden;
-  border-radius: 50%;
-  display: table-cell;
-  vertical-align: middle;
-  background: #CCC;
-  text-align: center; }
+.user-info {
+  margin-bottom: 20px; }
+  .user-info figure {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    background: #CCC;
+    text-align: center; }
+  .user-info figcaption {
+    display: table-cell;
+    width: 74%;
+    vertical-align: middle;
+    padding-left: 10px; }
+    .user-info figcaption h4 {
+      margin: 0px;
+      position: relative; }
+      .user-info figcaption h4 input {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.1) !important;
+        border-radius: 5px;
+        height: auto;
+        padding: 10px !important;
+        color: #FFF;
+        border: 0px; }
+      .user-info figcaption h4 img {
+        position: absolute;
+        right: 6px;
+        bottom: 8px;
+        width: 20px; }
 
-.user-info figcaption {
-  display: table-cell;
-  width: 74%;
-  vertical-align: middle;
-  padding-left: 10px; }
-  .user-info figcaption h4 {
-    margin: 0px;
-    position: relative; }
-    .user-info figcaption h4 input {
-      width: 100%;
-      background: rgba(0, 0, 0, 0.1) !important;
-      border-radius: 5px;
-      height: auto;
-      padding: 10px !important;
-      color: #FFF;
-      border: 0px; }
-    .user-info figcaption h4 img {
-      position: absolute;
-      right: 0px;
-      bottom: 0px;
-      width: 20px; }
+.user-class {
+  margin-bottom: 20px; }
+  .user-class h4 {
+    color: #FFF;
+    margin: 0 0 10px; }
+
+.profile-form-field label input {
+  width: 100%; }
+
+.profile-form-field .erge-icon {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #FFF; }
