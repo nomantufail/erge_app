@@ -53,6 +53,16 @@
 				height: auto;
 				padding: 10px !important;
 				color: #FFF;
+				border: 0px;
+			}
+			textarea{
+				width: 100%;
+				background: rgba(000, 000, 000, .1);
+				border-radius: 5px;
+				height: auto;
+				padding: 10px !important;
+				color: #FFF;
+				border: 0px;
 			}
 		}
 		&.half-field{

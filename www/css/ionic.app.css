@@ -13575,7 +13575,16 @@ ion-item.interested-ppl.item {
       border-radius: 5px;
       height: auto;
       padding: 10px !important;
-      color: #FFF; }
+      color: #FFF;
+      border: 0px; }
+    .form-field label.full-field textarea, .form-field label.half-field textarea {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      height: auto;
+      padding: 10px !important;
+      color: #FFF;
+      border: 0px; }
     .form-field label.half-field {
       float: left;
       width: 50%; }
