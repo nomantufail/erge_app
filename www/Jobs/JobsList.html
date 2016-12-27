@@ -1,8 +1,15 @@
 <ion-view view-title="ERGE">
-  <div style="display: table;height: 100%;" class="errorClass" ng-show="onerror">
+  <!-- <div style="display: table;height: 100%;" class="errorClass" ng-show="onerror">
     <h3 style="text-align: center;margin: 46px;display: table-cell;vertical-align: middle;">Sorry Some error occured
       while getting jobs List</h3>
+  </div> -->
+
+  <div class="navigation_bar_div" ng-init="userlist = 'matches'">
+    <button class="button btn-blue active" ng-click="userlist = 'matches'" ng-class="{active: userlist == 'matches'}">MATCHES</button>
+    <button class="button btn-blue" ng-click="userlist = 'all'" ng-class="{active: userlist == 'all'}">ALL</button>
+    <button class="button btn-blue" ng-click="userlist = 'all'" ng-class="{active: userlist == 'all'}">Two</button>
   </div>
+  
   <ion-content ng-hide="onerror">
 
     <div class="vertical-section">

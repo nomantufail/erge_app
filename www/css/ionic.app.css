@@ -13550,20 +13550,20 @@ ion-item.interested-ppl.item {
     color: #FFF;
     font-size: 11px; }
 
-.form-field, .profile-form-field {
+.form-field, .change-password .change-pass-field, .profile-form-field {
   margin: 0 -5px 20px;
   overflow: hidden; }
-  .form-field label, .profile-form-field label {
+  .form-field label, .change-password .change-pass-field label, .profile-form-field label {
     display: block;
     margin-bottom: 10px;
     padding: 0px 5px;
     overflow: hidden; }
-    .form-field label.full-field span, .profile-form-field label.full-field span, .form-field label.half-field span, .profile-form-field label.half-field span {
+    .form-field label.full-field span, .change-password .change-pass-field label.full-field span, .profile-form-field label.full-field span, .form-field label.half-field span, .change-password .change-pass-field label.half-field span, .profile-form-field label.half-field span {
       display: block;
       color: #FFF;
       font-synthesis: 14px;
       margin-bottom: 5px; }
-    .form-field label.full-field input, .profile-form-field label.full-field input, .form-field label.half-field input, .profile-form-field label.half-field input {
+    .form-field label.full-field input, .change-password .change-pass-field label.full-field input, .profile-form-field label.full-field input, .form-field label.half-field input, .change-password .change-pass-field label.half-field input, .profile-form-field label.half-field input {
       width: 100%;
       background: rgba(0, 0, 0, 0.1);
       border-radius: 5px;
@@ -13571,7 +13571,7 @@ ion-item.interested-ppl.item {
       padding: 10px !important;
       color: #FFF;
       border: 0px; }
-    .form-field label.full-field textarea, .profile-form-field label.full-field textarea, .form-field label.half-field textarea, .profile-form-field label.half-field textarea {
+    .form-field label.full-field textarea, .change-password .change-pass-field label.full-field textarea, .profile-form-field label.full-field textarea, .form-field label.half-field textarea, .change-password .change-pass-field label.half-field textarea, .profile-form-field label.half-field textarea {
       width: 100%;
       background: rgba(0, 0, 0, 0.1);
       border-radius: 5px;
@@ -13579,16 +13579,23 @@ ion-item.interested-ppl.item {
       padding: 10px !important;
       color: #FFF;
       border: 0px; }
-    .form-field label.half-field, .profile-form-field label.half-field {
+    .form-field label.half-field, .change-password .change-pass-field label.half-field, .profile-form-field label.half-field {
       float: left;
       width: 50%; }
-    .form-field label button, .profile-form-field label button {
+    .form-field label button, .change-password .change-pass-field label button, .profile-form-field label button {
       width: 100%;
       text-transform: uppercase;
       margin-top: 20px; }
-  .form-field p, .profile-form-field p {
+  .form-field p, .change-password .change-pass-field p, .profile-form-field p {
     color: #FFF;
     text-align: center; }
+
+.change-password {
+  padding-top: 20px; }
+  .change-password h4 {
+    color: #FFF;
+    margin: 0px 0px 40px;
+    font-size: 18px; }
 
 .blue-btn, .float-left input[type="button"], .float-right input[type="button"], .darkblue-btn {
   border-radius: 5px;
