@@ -13627,3 +13627,14 @@ ion-item.interested-ppl.item {
 
 .logo img {
   max-width: 100%; }
+
+.user-info figure {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: inline-block; }
+
+.user-info .figcaption {
+  display: inline-block;
+  vertical-align: middle; }
