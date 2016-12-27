@@ -322,19 +322,25 @@ angular.module('erge', ['ionic', 'constants', 'ngCordova', 'erge.controllers', '
     $ionicConfigProvider.navBar.alignTitle('center');
     $ionicConfigProvider.backButton.previousTitleText(false);
     $ionicConfigProvider.backButton.icon('ion-chevron-left');
-    $ionicConfigProvider.backButton.text('')
+    $ionicConfigProvider.backButton.text('');
     $stateProvider
       .state('startscreen', {
         url: '/startscreen',
         templateUrl: 'Authentication/MainScreen.html',
         controller: 'StartScreenCtrl'
       })
-      .state('login', {
-        url: '/login',
-        cache: false,
-        templateUrl: 'Authentication/Login.html',
-        controller: 'loginCtrl'
-      })
+        .state('login', {
+            url: '/login',
+            cache: false,
+            templateUrl: 'Authentication/Login.html',
+            controller: 'loginCtrl'
+        })
+        .state('forgetpass', {
+            url: '/forgetpass',
+            cache: false,
+            templateUrl: 'Authentication/ForgetPassword.html',
+            controller: 'loginCtrl'
+        })
       .state('signup', {
         url: '/signup',
         templateUrl: 'Authentication/Signup.html',
