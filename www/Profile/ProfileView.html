@@ -9,7 +9,9 @@
         <figcaption>
           <rating ng-model="rating.rate" max="rating.max" readonly="readOnly"></rating>
           <h4>
-            <span>{{profileData.roll}}</span>
+            <span>
+              <input type="text" class="input-group" ng-model="profileData.f_name"  ng-disabled="editorEnabled">
+            </span>
             <img class="profile-edit-icon" src="img/{{editbutton}}" ng-click="editButtonFunction()">
           </h4>
         </figcaption>
@@ -21,6 +23,30 @@
           <button class="darkblue-btn">CONECIERGE</button>
           <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.</p>
         </div>
+      </div>
+      <div class="form-field">
+        <label class="full-field">
+          <span>My Location</span>
+          <input type="text" placeholder="Enter your home address, Apt# and ZIP" ng-model="profileData.location" googleplace="" class="ng-pristine ng-valid" autocomplete="off" ng-disabled="editorEnabled">
+        </label>
+        <label class="full-field">
+          <span>Mobile Num</span>
+          <input type="text" class="input-group" ng-model="profileData.mobile"  ng-disabled="editorEnabled"/>
+        </label>
+        <label class="full-field">
+          <span>Email ID</span>
+          <input type="email" class="input-group" ng-model="profileData.email"  ng-disabled="true"/>
+        </label>
+        <label class="full-field">
+          <span>Bio</span>
+          <textarea rows="4" type="text" class="input-group" ng-model="profileData.bio"  ng-disabled="editorEnabled"></textarea>
+        </label>
+        <div class="erge-icon" ng-click="showPrivacyPolicyPopup()">
+          ERGE <u><b>privacy policy</b></u>
+        </div>
+        <label>
+          <input type="button" value="SAVE" class="blue-btn"               ng-click="saveprofile()">
+        </label>
       </div>
       <!--logo div-->
       <div class="profile-item">
@@ -48,14 +74,14 @@
       <!--<progress max="100" value="0" id="prog" ng-show="{{showprogess}}" style="width: 70%"></progress>-->
 
       <div class="form-group">
-        <div class="float-left">
+        <!-- <div class="float-left">
           <label class="white-label">FIRST NAME</label>
           <input type="text" class="input-group" ng-model="profileData.f_name"  ng-disabled="editorEnabled">
         </div>
         <div class="float-right">
           <label class="white-label">LAST NAME</label>
           <input type="text" class="input-group" ng-model="profileData.l_name"  ng-disabled="editorEnabled">
-        </div>
+        </div> -->
       </div>
       <!--data fields div start-->
       <div class="form-group" style="position: relative">

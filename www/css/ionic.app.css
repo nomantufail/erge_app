@@ -12375,12 +12375,6 @@ ul.rating li i {
   font-family: "RobotoLight";
   font-size: 16px; }
 
-.profile-edit-icon {
-  position: absolute;
-  right: 0px;
-  top: -10px;
-  width: 35px; }
-
 .profile-name {
   margin-right: 50px; }
 
@@ -13575,7 +13569,16 @@ ion-item.interested-ppl.item {
       border-radius: 5px;
       height: auto;
       padding: 10px !important;
-      color: #FFF; }
+      color: #FFF;
+      border: 0px; }
+    .form-field label.full-field textarea, .form-field label.half-field textarea {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      height: auto;
+      padding: 10px !important;
+      color: #FFF;
+      border: 0px; }
     .form-field label.half-field {
       float: left;
       width: 50%; }
@@ -13618,3 +13621,35 @@ ion-item.interested-ppl.item {
 
 .logo img {
   max-width: 100%; }
+
+.user-info figure {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: table-cell;
+  vertical-align: middle;
+  background: #CCC;
+  text-align: center; }
+
+.user-info figcaption {
+  display: table-cell;
+  width: 74%;
+  vertical-align: middle;
+  padding-left: 10px; }
+  .user-info figcaption h4 {
+    margin: 0px;
+    position: relative; }
+    .user-info figcaption h4 input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.1) !important;
+      border-radius: 5px;
+      height: auto;
+      padding: 10px !important;
+      color: #FFF;
+      border: 0px; }
+    .user-info figcaption h4 img {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      width: 20px; }

@@ -41,7 +41,7 @@
           <input type="password" ng-model="signUpData.confirmPassword">
         </label>
         <label>
-          <button class="blue-btn" ng-click="verifyMail()">Start</button>
+          <button class="blue-btn" ng-click="signup()">Start</button>
         </label>
         <p>Already a user? <a href="">Login Now</a></p>
       </div>
@@ -107,10 +107,11 @@
         </div>-->
 
       <!-- </div>
-      <div class="form-group" ng-hide="verificationField">
+      -->
+      <div class="form-group" ng-hide="verificationField" style-"display: none;">
         <label class="white-label">EMAIL VERIFICATION CODE</label>
         <input type="text" class="input-group" ng-model="signUpData.emailCode">
-      </div> -->
+      </div>
 
       <!-- <ion-checkbox class="termAndConditionCheckBox checkbox-positive" ng-model="isCheckedTC">You have to agree on out <b>Terms and condition</b></ion-checkbox>-->
       <!-- <div>

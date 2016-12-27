@@ -743,13 +743,6 @@ ul.rating li i {
   font-size: 16px;
 }
 
-.profile-edit-icon {
-  position: absolute;
-  right: 0px;
-  top: -10px;
-  width: 35px;
-}
-
 .profile-name {
   margin-right: 50px;
 }
@@ -2175,3 +2168,5 @@ ion-item.interested-ppl.item {
 @import "account/account";
 
 @import "common/common";
+
+@import "profile/profile";

@@ -1,0 +1,37 @@
+.user-info{
+	figure{
+		width: 80px;
+		height: 80px;
+		overflow: hidden;
+		border-radius: 50%;
+		display: table-cell;
+		vertical-align: middle;
+		background: #CCC;
+		text-align: center;
+	}
+	figcaption{
+		display: table-cell;
+		width: 74%;
+		vertical-align: middle;
+		padding-left: 10px;
+		h4{
+			margin: 0px;
+			position: relative;
+			input{
+				width: 100%;
+			    background: rgba(0, 0, 0, 0.1) !important;
+			    border-radius: 5px;
+			    height: auto;
+			    padding: 10px !important;
+			    color: #FFF;
+			    border: 0px;
+			}
+			img{
+				position: absolute;
+				right: 0px;
+				bottom: 0px;
+				width: 20px;
+			}
+		}
+	}
+}
