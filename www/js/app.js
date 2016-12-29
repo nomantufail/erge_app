@@ -453,16 +453,26 @@ angular.module('erge', ['ionic', 'constants', 'ngCordova', 'erge.controllers', '
         }
       })
 
-      .state('app.jobson', {
-        url: '/jobson',
-        cache: false,
-        views: {
-          'menuContent': {
-            templateUrl: 'Jobs/JobsList.html',
-            controller: 'JobsCtrl'
-          }
-        }
-      })
+        .state('app.jobs', {
+            url: '/jobs/new',
+            cache: false,
+            views: {
+                'menuContent': {
+                    templateUrl: 'Jobs/jobs_new.html',
+                    controller: 'JobsCtrl'
+                }
+            }
+        })
+        .state('app.jobson', {
+            url: '/jobson',
+            cache: false,
+            views: {
+                'menuContent': {
+                    templateUrl: 'Jobs/JobsList.html',
+                    controller: 'JobsCtrl'
+                }
+            }
+        })
       .state('app.jobson_completedjobs', {
         url: '/jobson/jobson_completedjobs',
         params: {data: null},

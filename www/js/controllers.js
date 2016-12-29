@@ -64,7 +64,6 @@ angular.module('erge.controllers', [])
     .controller('testCtrl', function($scope, Utils) {
         console.log('test controler called on search button');
         $scope.getLatLong = function() {
-
             Utils.getLatLongFun().then(function(data) {
                 console.log('profmise: ', data);
             });
