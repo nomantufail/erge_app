@@ -527,16 +527,26 @@ angular.module('erge', ['ionic', 'constants', 'ngCordova', 'erge.controllers', '
           }
         }
       })
-      .state('app.Payment', {
-        url: '/Payment',
-        cache: false,
-        views: {
-          'menuContent': {
-            templateUrl: 'Payments/Payment.html',
-            controller: 'ConciergePaymentCtrl'
-          }
-        }
-      })
+        .state('app.Payment', {
+            url: '/Payment',
+            cache: false,
+            views: {
+                'menuContent': {
+                    templateUrl: 'Payments/Payment.html',
+                    controller: 'ConciergePaymentCtrl'
+                }
+            }
+        })
+        .state('app.payment_settings', {
+            url: '/payment_settings',
+            cache: false,
+            views: {
+                'menuContent': {
+                    templateUrl: 'Payments/payment_settings.html',
+                    controller: 'payment_settings_ctrl'
+                }
+            }
+        });
 
 
     /*  .state('app.playlists', {

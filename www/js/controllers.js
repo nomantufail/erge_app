@@ -70,6 +70,9 @@ angular.module('erge.controllers', [])
             });
         }
     })
+    .controller('payment_settings_ctrl', function($scope, Utils) {
+
+    });
     /*.controller('PlaylistCtrl', function ($scope, $stateParams) {
 
     });*/
