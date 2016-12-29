@@ -1,0 +1,42 @@
+.side-bar-pro{
+	margin-bottom: 20px;
+	text-align: center;
+	padding-top: 30px;
+	figure{
+		width: 100px;
+		height: 100px;
+		overflow: hidden;
+		border-radius: 50%;
+		background: #CCC;
+		margin: 0 auto 10px;
+	}
+	h4{
+		margin: 0px;
+		color: #171414;
+		font-size: 16px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	span{
+		font-size: 12px;
+		text-transform: uppercase;
+		margin-top: 5px;
+		display: block;
+		img{
+			width: 10px;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+	}
+}
+
+.main-nav{
+	.list{
+		text-align: center;
+		border-top: 1px solid #eeeeee;
+		.item {
+			border: 0px;
+		}
+	}
+}

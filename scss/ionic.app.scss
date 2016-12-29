@@ -1295,10 +1295,6 @@ ion-popover-view.imegeViewerPopup.popover.none.ng-enter.active.ng-enter-active {
   vertical-align: middle;
 }
 
-.post-btn {
-  width: 70%;
-}
-
 .post-btn input[type="button"] {
   background-color: #003672;
   color: white;
@@ -2171,3 +2167,7 @@ ion-item.interested-ppl.item {
 @import "common/common";
 
 @import "profile/profile";
+
+@import "dashboard/sidebar";
+@import "dashboard/jobpost";
+@import "dashboard/splash";

@@ -1,0 +1,124 @@
+.job-post-bg{
+	background: url(../img/post-bg.png) no-repeat;
+	background-size: cover;
+}
+
+.job-post{
+	padding: 10px;
+}
+.post-head{
+	margin-bottom: 20px;
+	h4{
+		font-size: 28px;
+		color: #000;
+		margin: 0;
+	}
+	p{
+		font-size: 12px;
+		color: #000;
+		margin: 0px;
+	}
+}
+
+.file-upload{
+	width: 150px;
+	height: 150px;
+	margin: 0 auto 20px;
+	display: block;
+	background: url(../img/file-up.png) no-repeat center center;
+	background-size: 100%;
+	input{
+		visibility: hidden;
+	}
+}
+
+.post-field{
+	margin: 0px -5px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	label{
+		display: block;
+		margin-bottom: 20px;
+		padding: 0px 5px;
+		span{
+			display: block;
+			margin-bottom: 5px;
+		}
+		input{
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #b2b5c1;
+			background: #FFF;
+		}
+		textarea{
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #b2b5c1;
+			height: 100px;
+			background: #FFF;
+		}
+		&.half-field{
+			float: left;
+			overflow: hidden;
+			width: 50%;
+		}
+	}
+}
+
+.visibility-radius{
+	margin-bottom: 20px;
+	span{
+		display: block;
+		margin-bottom: 5px;
+	}
+}
+
+.post-bottom{
+	margin-bottom: 20px;
+	overflow: hidden;
+	>div{
+		float: left;
+		width: 48%;
+		background: #eff2f3;
+		border-radius: 5px;
+		padding: 10px;
+		img{
+			display: inline-block;
+			vertical-align: middle;
+			width: 15px;
+		}
+		span{
+			display: inline-block;
+			vertical-align: middle;
+			font-weight: bold;
+			float: right;
+		}
+		p{
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0px;
+			font-size: 11px;
+		}
+		&.miles{
+			margin-right: 5px;
+			span{
+				color: #12aaeb;
+			}
+		}
+		&.cost{
+			margin-left: 5px;
+			span{
+				color: #64d66c;
+			}
+		}
+	}
+}
+
+.post-btn{
+	text-align: center;
+	button{
+		width: 100%;
+	}
+}

@@ -6,13 +6,21 @@
 
   </video>-->
 
-  <div data-tap-disable="true">
+  <!-- <div data-tap-disable="true">
     <video class="bgVideo" controls preload="true" autoplay loop muted>
       <source src="img/erge-video.mp4" type="video/mp4" >
     </video>
-  </div>
-  <ion-content class="dark-video">
-    <div>
+  </div> -->
+  <ion-content>
+    <div class="splash-logo">
+      <img src="img/splash-logo.png">
+    </div>
+    <div class="splash-btn">
+      <button class="blue-btn" ng-click="loginView()">Login</button>
+      <button class="darkblue-btn" ng-click="signupView()">Create New Account</button>
+      <p>It’s easy. In just two steps</p>
+    </div>
+    <!-- <div>
       <div style="text-align: center;">
         <img src="img/newLogo.png" class="mainscreen-logo">
       </div>
@@ -24,7 +32,7 @@
         CREATE NEW ACCOUNT
       </div>
 
-      <p class="FirstPageLinksCls" style="font-size: 14px;margin-top: 20px">It’s easy. In just two steps</p>
+      <p class="FirstPageLinksCls" style="font-size: 14px;margin-top: 20px">It’s easy. In just two steps</p> -->
 
       <!--<P class="FirstPageLinksCls" ng-click="signupView()">CREATE NEW ACCOUNT</P>-->
 
@@ -32,7 +40,7 @@
             <P class="FirstPageLinksCls" ng-click="testbutton()">test button</P>
 -->
 
-    </div>
+    <!-- </div> -->
 
   </ion-content>
 </ion-view>

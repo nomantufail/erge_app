@@ -12809,9 +12809,6 @@ ion-popover-view.imegeViewerPopup.popover.none.ng-enter.active.ng-enter-active {
   width: 30px;
   vertical-align: middle; }
 
-.post-btn {
-  width: 70%; }
-
 .post-btn input[type="button"] {
   background-color: #003672;
   color: white;
@@ -13597,6 +13594,41 @@ ion-item.interested-ppl.item {
     margin: 0px 0px 40px;
     font-size: 18px; }
 
+.forget-widget {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  width: 100%;
+  transform: translate(0%, -50%);
+  padding: 0px 20px; }
+  .forget-widget h4 {
+    color: #FFF;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 0px; }
+  .forget-widget p {
+    font-size: 9px;
+    color: #FFF;
+    margin-bottom: 20px; }
+  .forget-widget label {
+    display: block;
+    margin-bottom: 20px; }
+    .forget-widget label span {
+      display: block;
+      margin-bottom: 5px;
+      color: #FFF;
+      font-size: 11px; }
+    .forget-widget label input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      height: auto;
+      padding: 10px !important;
+      color: #FFF;
+      border: 0px; }
+  .forget-widget button {
+    width: 100%; }
+
 .blue-btn, .float-left input[type="button"], .float-right input[type="button"], .darkblue-btn {
   border-radius: 5px;
   font-weight: bold;
@@ -13675,3 +13707,159 @@ ion-item.interested-ppl.item {
   margin-bottom: 10px;
   text-align: center;
   color: #FFF; }
+
+.side-bar-pro {
+  margin-bottom: 20px;
+  text-align: center;
+  padding-top: 30px; }
+  .side-bar-pro figure {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #CCC;
+    margin: 0 auto 10px; }
+  .side-bar-pro h4 {
+    margin: 0px;
+    color: #171414;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  .side-bar-pro span {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    display: block; }
+    .side-bar-pro span img {
+      width: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px; }
+
+.main-nav .list {
+  text-align: center;
+  border-top: 1px solid #eeeeee; }
+  .main-nav .list .item {
+    border: 0px; }
+
+.job-post-bg {
+  background: url(../img/post-bg.png) no-repeat;
+  background-size: cover; }
+
+.job-post {
+  padding: 10px; }
+
+.post-head {
+  margin-bottom: 20px; }
+  .post-head h4 {
+    font-size: 28px;
+    color: #000;
+    margin: 0; }
+  .post-head p {
+    font-size: 12px;
+    color: #000;
+    margin: 0px; }
+
+.file-upload {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  display: block;
+  background: url(../img/file-up.png) no-repeat center center;
+  background-size: 100%; }
+  .file-upload input {
+    visibility: hidden; }
+
+.post-field {
+  margin: 0px -5px;
+  overflow: hidden;
+  margin-bottom: 20px; }
+  .post-field label {
+    display: block;
+    margin-bottom: 20px;
+    padding: 0px 5px; }
+    .post-field label span {
+      display: block;
+      margin-bottom: 5px; }
+    .post-field label input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #b2b5c1;
+      background: #FFF; }
+    .post-field label textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #b2b5c1;
+      height: 100px;
+      background: #FFF; }
+    .post-field label.half-field {
+      float: left;
+      overflow: hidden;
+      width: 50%; }
+
+.visibility-radius {
+  margin-bottom: 20px; }
+  .visibility-radius span {
+    display: block;
+    margin-bottom: 5px; }
+
+.post-bottom {
+  margin-bottom: 20px;
+  overflow: hidden; }
+  .post-bottom > div {
+    float: left;
+    width: 48%;
+    background: #eff2f3;
+    border-radius: 5px;
+    padding: 10px; }
+    .post-bottom > div img {
+      display: inline-block;
+      vertical-align: middle;
+      width: 15px; }
+    .post-bottom > div span {
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: bold;
+      float: right; }
+    .post-bottom > div p {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0px;
+      font-size: 11px; }
+    .post-bottom > div.miles {
+      margin-right: 5px; }
+      .post-bottom > div.miles span {
+        color: #12aaeb; }
+    .post-bottom > div.cost {
+      margin-left: 5px; }
+      .post-bottom > div.cost span {
+        color: #64d66c; }
+
+.post-btn {
+  text-align: center; }
+  .post-btn button {
+    width: 100%; }
+
+.splash-logo {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%); }
+  .splash-logo img {
+    width: 100px; }
+
+.splash-btn {
+  padding: 0px 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  text-align: center; }
+  .splash-btn button {
+    width: 100%;
+    margin-bottom: 10px;
+    text-transform: uppercase; }
+  .splash-btn p {
+    color: #FFF; }
