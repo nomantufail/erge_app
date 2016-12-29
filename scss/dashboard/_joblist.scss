@@ -1,0 +1,91 @@
+.job-list-section{
+	.tab-nav{
+		border-bottom: 0px;
+		
+		.tab-item{
+			border-bottom: 0px;
+			background: #ffffff;
+			font-size: 12px;
+			font-weight: bold;
+			&.tab-item-active{
+				border-bottom: 2px solid #2fd5f8;
+				color: #2fd5f8;
+			}
+		}
+	}
+}
+
+.job-list-content{
+	padding: 10px;
+    background: #f7f7f7;
+    height: calc(100vh - 93px);
+    margin-top: 93px;
+}
+
+.job-list{
+	li{
+		padding: 10px;
+		border-radius: 5px;
+		border: 1px solid #65c2ff;
+		display: table;
+		width: 100%;
+		margin-bottom: 10px;
+		background: #FFF;
+		.user-img{
+			display: table-cell;
+			width: 70px;
+			vertical-align: top;
+			figure{
+				border-radius: 50%;
+				overflow: hidden;
+				text-align: center;
+				width: 70px;
+				height: 70px;
+				img{
+					width: 100%;
+				}
+			}
+		}
+		figcaption{
+			display: table-cell;
+			width: 75%;
+			vertical-align: top;
+			padding-left: 10px;
+			.star{
+				img{
+					width: 50px;
+				}
+			}
+			h4{
+				margin: 0px;
+				font-size: 14px;
+			}
+			.number{
+				font-size: 11px;
+				margin-bottom: 5px;
+				display: block;
+			}
+			p{
+				font-size: 10px;
+				line-height: 1.5;
+				margin-bottom: 0px;
+			}
+			.price{
+				color: #64d66c;
+				font-size: 14px;
+				font-weight: bold;
+			}
+			.bottom-list{
+				p{
+					float: left;
+					font-size: 10px;
+					margin: 0px;
+				}
+				span{
+					float: right;
+					font-size: 10px;
+				}
+			}
+		}
+	}
+}
