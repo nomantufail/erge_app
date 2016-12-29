@@ -5,6 +5,9 @@ angular.module('erge.Jobs', [])
     //$scope.jobs_ongoing = [];
     //$scope.onEmptyActive = false;
 
+      $scope.goToJobDetail_new = function(){
+        $state.go('app.ActiveJob_new', {data: {}});
+      };
     $scope.$on("$ionicView.enter", function () {
       $scope.onerror = false;
       //$scope.jobs_ongoing = [];
@@ -1218,7 +1221,7 @@ angular.module('erge.Jobs', [])
         resciever_id:$scope.activeJobDetails.canidate_id
       }
       console.log('sendmessege function called ')
-      $state.go('app.chat', {data: userDataForChat});
+      $state.go('app.chat_new', {data: userDataForChat});
     }
 
     /*ratings stars*/

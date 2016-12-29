@@ -380,17 +380,28 @@ angular.module('erge', ['ionic', 'constants', 'ngCordova', 'erge.controllers', '
           }
         }
       })
-      .state('app.chat', {
-        url: '/chat',
-        cache: false,
-        params: {data: null},
-        views: {
-          'menuContent': {
-            templateUrl: 'Chat/ActiveChat.html',
-            controller: 'ActiveChat'
-          }
-        }
-      })
+        .state('app.chat', {
+            url: '/chat',
+            cache: false,
+            params: {data: null},
+            views: {
+                'menuContent': {
+                    templateUrl: 'Chat/ActiveChat.html',
+                    controller: 'ActiveChat'
+                }
+            }
+        })
+        .state('app.chat_new', {
+            url: '/chat_new',
+            cache: false,
+            params: {data: null},
+            views: {
+                'menuContent': {
+                    templateUrl: 'Chat/ActiveChat_new.html',
+                    controller: 'ActiveChat'
+                }
+            }
+        })
       .state('app.JobDetail', {
         url: '/home/jobdetails',
         params: {data: null},
@@ -401,17 +412,28 @@ angular.module('erge', ['ionic', 'constants', 'ngCordova', 'erge.controllers', '
           }
         }
       })
-      .state('app.ActiveJob', {
-        url: '/home/jobdetails/ActiveJob',
-        params: {data: null},
-        cache: false,
-        views: {
-          'menuContent': {
-            templateUrl: 'Jobs/ActiveJobView.html',
-            controller: 'ActiveJobCtrl'
-          }
-        }
-      })
+        .state('app.ActiveJob', {
+            url: '/home/jobdetails/ActiveJob',
+            params: {data: null},
+            cache: false,
+            views: {
+                'menuContent': {
+                    templateUrl: 'Jobs/ActiveJobView.html',
+                    controller: 'ActiveJobCtrl'
+                }
+            }
+        })
+        .state('app.ActiveJob_new', {
+            url: '/home/jobdetails/ActiveJob/new',
+            params: {data: null},
+            cache: false,
+            views: {
+                'menuContent': {
+                    templateUrl: 'Jobs/ActiveJobView_new.html',
+                    controller: 'ActiveJobCtrl'
+                }
+            }
+        })
       .state('app.ActiveJobsList', {
         url: '/home/jobdetails/ActiveJobsList/',
         params: {data: null},
