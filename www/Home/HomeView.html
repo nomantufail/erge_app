@@ -1,74 +1,68 @@
 <ion-view view-title="ERGE" class="">
-  <ion-content>
-    <!-- <ion-scroll style="width:auto;height:100% !important;position: relative !important;">-->
+    <ion-content>
+        <!-- <ion-scroll style="width:auto;height:100% !important;position: relative !important;">-->
 
-    <!--  <div my-map="" position="position" id="map" data-tap-disabled="true"></div>-->
-    <div my-map="" position="position" map="map" a="jobLocations" id="map" data-tap-disabled="true"
-         ng-style="getStyle()"></div>
-    <!-- <div map lat="31.5546060" lng="74.3571580" zoom="8" data-tap-disabled="true a="jobLocations" id="map" data-tap-disabled="true" ng-style="getStyle()"></div>-->
-    <div class="refresh" ng-hide="changeHome">
-      <img class="refreshBtn" src="./img/refresh-icon_03.png" ng-click="getjobsForConscierge(job_duration)">
-    </div>
-    <div ng-hide="changeHome" class="job-fileter-selector">
-      <ion-item class="item-input item-select jobFilter">
-        <div class="input-label jobFilter-input">
-          Displaying Jobs
+        <!--  <div my-map="" position="position" id="map" data-tap-disabled="true"></div>-->
+        <div my-map="" position="position" map="map" a="jobLocations" id="map" data-tap-disabled="true" ng-style="getStyle()"></div>
+        <!-- <div map lat="31.5546060" lng="74.3571580" zoom="8" data-tap-disabled="true a="jobLocations" id="map" data-tap-disabled="true" ng-style="getStyle()"></div>-->
+        <div class="refresh" ng-hide="changeHome">
+            <img class="refreshBtn" src="./img/refresh-icon_03.png" ng-click="getjobsForConscierge(job_duration)">
         </div>
-        <select ng-model="job_duration" ng-change="jobDurationChnaged(job_duration)">
+        <div ng-hide="changeHome" class="job-fileter-selector">
+            <ion-item class="item-input item-select jobFilter">
+                <div class="input-label jobFilter-input">
+                    Displaying Jobs
+                </div>
+                <select ng-model="job_duration" ng-change="jobDurationChnaged(job_duration)">
 
           <option ng-selected="true" value="all">ALL</option>
           <option value="today">TODAY</option>
           <option value="past6hours">PAST 6 HOURS</option>
           <option value="pasthour">PAST HOUR</option>
         </select>
-      </ion-item>
-    </div>
-
-
-    <div class="container" ng-show="changeHome">
-
-
-      <div class="top-search" disable-tap>
-        <div class="top-search-input">
-          <input type="text" id="autocomplete" class="form-control" ng-autocomplete
-                 ng-model="jobLocations.startlocation" flag="start" placeholder="Enter Start Location"/>
-          <img class="top-search-cross" src="img/active-past_jobs_13.png" ng-click="clearStartLocation()">
-
+            </ion-item>
         </div>
 
-        <div class="top-search-input">
-          <input type="text" id="autocomplete2" class="form-control" ng-autocomplete
-                 ng-model="jobLocations.endlocation"
-                 flag="end" placeholder="Enter End Location"/>
-          <img class="top-search-cross" src="img/active-past_jobs_13.png" ng-click="clearEndLocation()">
+
+        <div class="container" ng-show="changeHome">
+
+
+            <div class="top-search" disable-tap>
+                <div class="top-search-input">
+                    <input type="text" id="autocomplete" class="form-control" ng-autocomplete ng-model="jobLocations.startlocation" flag="start" placeholder="Enter Start Location" />
+                    <img class="top-search-cross" src="img/active-past_jobs_13.png" ng-click="clearStartLocation()">
+
+                </div>
+
+                <div class="top-search-input">
+                    <input type="text" id="autocomplete2" class="form-control" ng-autocomplete ng-model="jobLocations.endlocation" flag="end" placeholder="Enter End Location" />
+                    <img class="top-search-cross" src="img/active-past_jobs_13.png" ng-click="clearEndLocation()">
+                </div>
+            </div>
+
         </div>
-      </div>
-
-    </div>
-    <div ng-show="changeHome" class="bottom-div" style="padding: 7px;background-color: black;">
-      <div style="text-align: center; margin: 0 auto;">
-        <!--showConResPopOver  showActionsheet-->
-        <span style="width: 30px;vertical-align: middle;" ng-hide="chnageCamraIcon" ng-click="openImageViewerPopover1()"><img
-          src="img/14_completeJobs_11.png" alt="" style="width: 100%;"></span>
-        <span style="width: 30px;vertical-align: middle;" ng-show="chnageCamraIcon"
-              ng-click="showActionsheet($event)"><img src="img/14_PostJob_11.png" alt="" style="width: 100%;"></span>
+        <div ng-show="changeHome" class="bottom-div" style="padding: 7px;background-color: black;">
+            <div style="text-align: center; margin: 0 auto;">
+                <!--showConResPopOver  showActionsheet-->
+                <!--<span style="width: 30px;vertical-align: middle;" ng-hide="chnageCamraIcon" ng-click="openImageViewerPopover1()"><img
+          src="img/14_completeJobs_11.png" alt="" style="width: 100%;"></span>-->
+                <!--<span style="width: 30px;vertical-align: middle;" ng-show="chnageCamraIcon" ng-click="showActionsheet($event)"><img src="img/14_PostJob_11.png" alt="" style="width: 100%;"></span>-->
 
 
-        <span style="width:70%;border: 1px solid;"><input type="text" ng-model="jobDescription.text"
+                <!--<span style="width:70%;border: 1px solid;"><input type="text" ng-model="jobDescription.text"
                                                           name=""
                                                           placeholder="Add job description here...."
-                                                          style="padding-left: 5px;;width: 100%;background-color: #2A2C2D;color: white;font-family: RobotoLight;"> </span>
-        <span style="" ng-click="gotoJobDetailView()"><input type="button" value="NEXT"
+                                                          style="padding-left: 5px;;width: 100%;background-color: #2A2C2D;color: white;font-family: RobotoLight;"> </span>-->
+                <span ng-click="gotoJobDetailView()"><input type="button" value="NEXT"
                                                              style="height: 33px;background-color: #003672;color: white;border: none;font-family: RobotoLight;"></span>
-      </div>
-    </div>
+            </div>
+        </div>
 
-    <!--<div ng-hide="changeHome" class="img-pan">
+        <!--<div ng-hide="changeHome" class="img-pan">
       <img src="img/msg-bar.png" alt="">
 
     </div>-->
-    <!-- gotoJobDetailView-->
-    <!-- </ion-scroll>-->
-  </ion-content>
+        <!-- gotoJobDetailView-->
+        <!-- </ion-scroll>-->
+    </ion-content>
 </ion-view>
-
