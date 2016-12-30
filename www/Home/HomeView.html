@@ -30,7 +30,8 @@
             <div class="top-search" disable-tap>
                 <div class="top-search-input">
                     <input type="text" id="autocomplete" class="form-control" ng-autocomplete ng-model="jobLocations.startlocation" flag="start" ng-focus="disableTap()" placeholder="Enter Point of pick up" data-tap-disabled="true" />
-                    <img class="top-search-cross" src="img/active-past_jobs_13.png" ng-click="clearStartLocation()">
+                    <!-- <img class="top-search-cross" src="img/active-past_jobs_13.png" ng-click="clearStartLocation()"> -->
+                    <img class="top-search-cross" src="img/search-icon.png" alt="">
 
                 </div>
 
@@ -41,8 +42,7 @@
             </div>
 
         </div>
-        <div ng-show="changeHome" class="bottom-div" style="padding: 7px;background-color: black;">
-            <div style="text-align: center; margin: 0 auto;">
+        <div ng-show="changeHome" class="bottom-div">
                 <!--showConResPopOver  showActionsheet-->
                 <!--<span style="width: 30px;vertical-align: middle;" ng-hide="chnageCamraIcon" ng-click="openImageViewerPopover1()"><img
           src="img/14_completeJobs_11.png" alt="" style="width: 100%;"></span>-->
@@ -53,9 +53,9 @@
                                                           name=""
                                                           placeholder="Add job description here...."
                                                           style="padding-left: 5px;;width: 100%;background-color: #2A2C2D;color: white;font-family: RobotoLight;"> </span>-->
-                <span ng-click="gotoJobDetailView()"><input type="button" value="NEXT"
-                                                             style="height: 33px;background-color: #003672;color: white;border: none;font-family: RobotoLight;"></span>
-            </div>
+                <span ng-click="gotoJobDetailView()">
+                    <input type="button" class="blue-btn" value="HIRE A CONCIERGE">
+                </span>
         </div>
 
         <!--<div ng-hide="changeHome" class="img-pan">
