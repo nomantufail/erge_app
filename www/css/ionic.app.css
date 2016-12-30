@@ -12549,12 +12549,6 @@ ul.rating li i {
   padding-bottom: 5px;
   font-family: "RobotoLight"; }
 
-.top-search {
-  position: absolute;
-  width: 85%;
-  z-index: 9999;
-  top: 3%; }
-
 .job-fileter-selector {
   position: absolute;
   width: 70%;
@@ -12577,48 +12571,6 @@ ul.rating li i {
 .refresh :active {
   background-color: rgba(0, 0, 0, 0.5) !important;
   border-radius: 30%; }
-
-.top-search-input {
-  margin: 10px 0; }
-
-.top-search-input input[type="text"] {
-  padding-right: 40px !important;
-  width: 100%;
-  background: url(../img/14_PostJob_03.png) no-repeat #fff;
-  border: 1px solid #cccccc;
-  padding: 10px;
-  display: block;
-  background-size: 20px;
-  background-position: 8px 6px;
-  padding-left: 40px;
-  box-shadow: 0px 2px 4px #B1B1B1; }
-
-.top-search-cross {
-  float: right;
-  height: 30px;
-  width: 30px;
-  margin-top: -32px;
-  margin-right: 0px;
-  padding: 8px; }
-
-.bottom-div {
-  position: absolute;
-  width: 100%;
-  z-index: 9999;
-  bottom: 0;
-  border: 1px solid; }
-  .bottom-div .bottom-div span:nth-child(1) {
-    height: 30px;
-    float: left; }
-
-.bottom-div span {
-  display: inline-block; }
-
-.bottom-div span:nth-child(1) {
-  vertical-align: bottom; }
-
-.bottom-div span:nth-child(1) img {
-  height: 30px; }
 
 .menu-items {
   font-family: "RobotoLight"; }
@@ -13828,6 +13780,8 @@ ion-item.interested-ppl.item {
     border-radius: 50%;
     background: #CCC;
     margin: 0 auto 10px; }
+    .side-bar-pro figure img {
+      width: 100%; }
   .side-bar-pro h4 {
     margin: 0px;
     color: #171414;
@@ -14172,3 +14126,32 @@ ion-item.interested-ppl.item {
   .flag-btn span {
     display: inline-block;
     vertical-align: middle; }
+
+.top-search {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  width: 100%;
+  padding: 0px 20px; }
+  .top-search .top-search-input {
+    position: relative; }
+    .top-search .top-search-input input {
+      width: 100%;
+      padding: 15px 40px 15px 10px;
+      height: auto;
+      border-radius: 5px; }
+    .top-search .top-search-input img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px; }
+
+.bottom-div {
+  position: fixed;
+  bottom: 20px;
+  left: 0px;
+  width: 100%;
+  padding: 0px 20px; }
+  .bottom-div input {
+    width: 100%; }
