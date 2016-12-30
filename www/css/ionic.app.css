@@ -13742,6 +13742,83 @@ ion-item.interested-ppl.item {
   text-align: center;
   color: #FFF; }
 
+.chatBg {
+  background-image: url(../img/chat-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.msg-list {
+  padding: 10px; }
+  .msg-list li {
+    width: 80%;
+    display: table;
+    margin-bottom: 30px; }
+    .msg-list li.msg-right {
+      float: right; }
+    .msg-list li.msg-left span {
+      background: #000000;
+      color: #FFF;
+      border-radius: 8px 8px 8px 0px; }
+    .msg-list li span {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 3px 6px;
+      border-radius: 8px 8px 0px 8px;
+      background: #f8f8f8;
+      border: 1px solid #ececec;
+      font-size: 13px; }
+    .msg-list li em {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 10px;
+      font-size: 11px;
+      width: 65px; }
+    .msg-list li .user-img {
+      display: table-cell;
+      vertical-align: middle; }
+      .msg-list li .user-img figure {
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        border-radius: 50%; }
+        .msg-list li .user-img figure img {
+          width: 100%; }
+
+.msge-field {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  z-index: 999999; }
+  .msge-field > input {
+    display: inline-flex;
+    vertical-align: middle;
+    height: 100%;
+    width: 15%;
+    padding: 20px; }
+    .msge-field > input[type="text"] {
+      width: 70%; }
+    .msge-field > input[type="submit"] {
+      background: url(../img/send-btn.png) no-repeat center center;
+      background-size: 20px;
+      border: 0px;
+      text-indent: -999999px; }
+  .msge-field label {
+    display: inline-flex;
+    vertical-align: middle;
+    width: 15%;
+    background: url(../img/file-btn.png) no-repeat center center;
+    padding: 10px;
+    background-size: 12px;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0; }
+    .msge-field label input {
+      visibility: hidden;
+      display: inline-block;
+      width: 1px; }
+
 .side-bar-pro {
   margin-bottom: 20px;
   text-align: center;
