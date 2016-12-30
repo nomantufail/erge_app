@@ -237,8 +237,8 @@ angular.module('erge.Home', ['ionic', 'ngCordova', 'google.places'])
             $scope.popoverImgView.show($event);
         };
         $scope.openImageViewerPopover = function(imgUrl) {
-            console.log('openImageViewerPopover fun called');
-            console.log('img url : ', imgUrl)
+            // console.log('openImageViewerPopover fun called');
+            // console.log('img url : ', imgUrl)
             $scope.disableDeleteBtn = true;
             $scope.image_file_uri = imgUrl;
             $scope.popoverImgView.show();

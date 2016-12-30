@@ -1,47 +1,47 @@
-<ion-popover-view  class="jdPopover">
-  <div class="jobcontainer">
-    <div class="jobdetails">
-      <div class="jobprofile">
-        <img class="profile_pic" src="{{con_res_for_job.profile_pic}}">
-        <rating ng-model="rating_con.rate" max="rating_con.max" readonly="readOnlycon_res"></rating>
-      </div>
+<ion-popover-view class="jdPopover">
+    <div class="jobcontainer">
+        <div class="jobdetails">
+            <div class="jobprofile">
+                <img class="profile_pic" ng-src="{{con_res_for_job.profile_pic}}">
+                <rating ng-model="rating_con.rate" max="rating_con.max" readonly="readOnlycon_res"></rating>
+            </div>
 
-      <div class="jobpdescription">
-        <div class="con-res-name" >
-          {{con_res_for_job.l_name}}
-        <!--  Name of con conscierge-->
-        </div>
-        <div class="jobdesc-con-res">
-          {{con_res_for_job.application_description}}
-         <!-- details of consciergegoes herer-->
+            <div class="jobpdescription">
+                <div class="con-res-name">
+                    {{con_res_for_job.l_name}}
+                    <!--  Name of con conscierge-->
+                </div>
+                <div class="jobdesc-con-res">
+                    {{con_res_for_job.application_description}}
+                    <!-- details of consciergegoes herer-->
 
-        </div>
-        <!--<div class="ratings-con-res">-->
+                </div>
+                <!--<div class="ratings-con-res">-->
 
 
-         <!-- <i class="ion-ios-star"></i>
+                <!-- <i class="ion-ios-star"></i>
           <i class="ion-ios-star"></i>
           <i class="ion-ios-star"></i>
           <i class="ion-ios-star"></i>
           <i class="ion-ios-star"></i>-->
-       <!-- </div>-->
+                <!-- </div>-->
 
-      </div>
-      <!--<div class="con-res-details">Pick up time is approximatly 30 minutes</div>-->
-    </div>
+            </div>
+            <!--<div class="con-res-details">Pick up time is approximatly 30 minutes</div>-->
+        </div>
 
-    <div style="overflow: hidden;">
-      <div class="float-left">
-        <button class="button button-block button-assertive interestedbtn" ng-click="closePopover()">
+        <div style="overflow: hidden;">
+            <div class="float-left">
+                <button class="button button-block button-assertive interestedbtn" ng-click="closePopover()">
           PASS
         </button>
-      </div>
-      <div class="float-right">
-        <button class="button button-block button-assertive startrBtn" ng-click="assignJobFun()">
+            </div>
+            <div class="float-right">
+                <button class="button button-block button-assertive startrBtn" ng-click="assignJobFun()">
           START
         </button>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 
 </ion-popover-view>

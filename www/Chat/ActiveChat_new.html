@@ -1,55 +1,50 @@
 <ion-view class="chatBg">
-	<ion-content delegate-handle="mainScroll">
-		<div class="chat-section">
-			<ul class="msg-list">
-				<li class="msg-right">
-					<em>7:00 PM</em>
-					<span>Mr. AbuBakar. Nice to meet you! </span>
-				</li>
-				<li class="msg-left">
-					<div class="user-img">
-						<figure>
-							<img src="img/job-img.png" alt="">
-						</figure>
-					</div>
-					<span>Good thanks, you?</span>
-					<em>7:00 PM</em>
-				</li>
-				<li class="msg-right">
-					<em>7:00 PM</em>
-					<span>Mr. AbuBakar. Nice to meet you! </span>
-				</li>
-				<li class="msg-left">
-					<div class="user-img">
-						<figure>
-							<img src="img/job-img.png" alt="">
-						</figure>
-					</div>
-					<span>Good thanks, you?</span>
-					<em>7:00 PM</em>
-				</li>
-				<li class="msg-right">
-					<em>7:00 PM</em>
-					<span>Mr. AbuBakar. Nice to meet you! </span>
-				</li>
-				<li class="msg-left">
-					<div class="user-img">
-						<figure>
-							<img src="img/job-img.png" alt="">
-						</figure>
-					</div>
-					<span>Good thanks, you?</span>
-					<em>7:00 PM</em>
-				</li>
-			</ul>
-		</div>
-	</ion-content>
-	<div class="msge-field">
-		<input type="text" placeholder="Type Your Message">
-		<label>
+    <ion-content delegate-handle="mainScroll">
+        <div class="chat-section">
+            <ul class="msg-list">
+                <li ng-repeat="message in dummys" class="{{message.message_by}}">
+                    <div class="user-img">
+                        <figure>
+                            <img src="{{message.pic}}" alt="">
+                        </figure>
+                    </div>
+                    <span>{{message.name}}. {{message.message}}</span>
+                    <em>{{message.time}}</em>
+                </li>
+                <!--<li class="msg-right">
+                    <em>7:00 PM</em>
+                    <span>Mr. AbuBakar. Nice to meet you! </span>
+                </li>
+                <li class="msg-left">
+                    <div class="user-img">
+                        <figure>
+                            <img src="img/job-img.png" alt="">
+                        </figure>
+                    </div>
+                    <span>Good thanks, you?</span>
+                    <em>7:00 PM</em>
+                </li>
+                <li class="msg-right">
+                    <em>7:00 PM</em>
+                    <span>Mr. AbuBakar. Nice to meet you! </span>
+                </li>
+                <li class="msg-left">
+                    <div class="user-img">
+                        <figure>
+                            <img src="img/job-img.png" alt="">
+                        </figure>
+                    </div>
+                    <span>Good thanks, you?</span>
+                    <em>7:00 PM</em>
+                </li>-->
+            </ul>
+        </div>
+    </ion-content>
+    <div class="msge-field">
+        <input type="text" placeholder="Type Your Message" ng-model="content">
+        <label>
 			<input type="file">
 		</label>
-		<input type="submit" name="" value="Send">
-	</div>
+        <input type="submit" name="" value="Send" ng-click="dummyMessage()">
+    </div>
 </ion-view>
-
