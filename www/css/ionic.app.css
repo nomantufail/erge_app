@@ -13539,9 +13539,7 @@ ion-item.interested-ppl.item {
   text-align: justify; }
   .btn-group button {
     display: inline-block;
-    width: 48%; }
-    .btn-group button.darkblue-btn {
-      float: right; }
+    width: 49%; }
   .btn-group p {
     margin: 5px 0px 0;
     color: #FFF;
