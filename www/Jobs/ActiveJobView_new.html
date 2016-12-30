@@ -1,6 +1,66 @@
-<ion-view view-title="ERGE" class="">
+<ion-view class="trackBg" view-title="ERGE">
   <ion-content>
-    <button ng-click="sendmessege()">chat with me</button>
+ 	<div class="track-section">
+ 		<div class="estimated-panel">
+ 			<div class="miles">
+	        	<img src="img/miles.png" alt="">
+	          	<p>Estimated Miles</p>
+	          	<span>9mi</span>
+	        </div>
+	        <div class="cost">
+	          	<img src="img/cost.png" alt="">
+	          	<p>Estimate Cost</p>
+	          	<span>25$</span>
+	        </div>
+ 		</div>
+ 		<div class="user-track">
+ 			<div class="track-info">
+ 				<div class="user-track-img">
+ 					<figure>
+ 						<img src="img/job-img.png" alt="">
+ 					</figure>
+	 				<h4>Roosevelt  Johnson</h4>
+	 				<span>+1 647 847 5246</span>
+	 				<div class="star">
+	 					<img src="img/star.png" alt="">
+	 				</div>
+ 				</div>
+ 				<div class="road-widget">
+ 					<h4>
+ 						<img src="img/truck-icon.png" alt="">
+ 						<span>On the road</span>
+ 					</h4>
+ 					<span>Approximate time is 5min</span>
+ 				</div>
+ 			</div>
+ 			<div class="conversation-panel">
+ 				<ul class="conv-list">
+ 					<li>
+ 						<span>11 December - 10:30 AM</span>
+ 						<h4>Picked your package</h4>
+ 					</li>
+ 					<li class="active">
+ 						<span>11 December - 10:30 AM</span>
+ 						<h4>Picked your package</h4>
+ 						<div class="conv-btn">
+ 							<button class="chat-btn" ng-click="sendmessege()">
+ 								<img src="img/chat-icon.png" alt="">
+ 								<span>Chat</span>
+ 							</button>
+ 							<button class="call-btn">
+ 								<img src="img/call-icon.png" alt="">
+ 								<span>Call</span>
+ 							</button>
+ 						</div>
+ 					</li>
+ 				</ul>
+ 			</div>
+ 			<div class="flag-btn">
+	 			<img src="img/flag-icon.png" alt="">
+	 			<span>Finish Job</span>
+	 		</div>
+ 		</div>
+ 	</div>
   </ion-content>
 </ion-view>
 

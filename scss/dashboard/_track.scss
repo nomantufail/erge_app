@@ -1,0 +1,168 @@
+.trackBg{
+	background-image: url(../img/track-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.estimated-panel{
+	@extend .post-bottom;
+	padding: 20px 10px;
+}
+
+.user-track{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+.track-info{
+	background: #FFF;
+	padding: 10px 0;
+	display: table;
+	width: 100%;
+	>div{
+		display: table-cell;
+		vertical-align: middle;
+		width: 50%;
+		padding: 0px 15px;
+		&.user-track-img{
+			border-right: 1px solid #dbdbdb;
+			text-align: center;
+			figure{
+				display: block;
+				margin: 0 auto 5px;
+				width: 60px;
+				height: 60px;
+				overflow: hidden;
+				border-radius: 50%;
+				img{
+					width: 100%;
+				}
+			}
+			h4{
+				font-size: 13px;
+				font-weight: bold;
+				margin: 0px 5px;
+			}
+			span{
+				display: block;
+				font-size: 11px;
+				color: #adadad;
+			}
+			.star{
+				line-height: 1;
+				img{
+					width: 50px;
+				}
+			}
+		}
+		&.road-widget{
+			h4{
+				font-size: 18px;
+				margin: 0px;
+				font-weight: bold;
+				img{
+					display: inline-block;
+					width: 20px;
+				}
+			}
+			>span{
+				font-size: 11px;
+				color: #adadad;
+			}
+		}
+	}
+}
+
+.conversation-panel{
+	background: #f1f1f1;
+	padding: 10px;
+	ul{
+		padding-left: 20px;
+		margin-left: 10px;
+		border-left: 1px solid #CCC;
+		li{
+			margin-bottom: 30px;
+			position: relative;
+			>span{
+				font-size: 11px;
+				display: block;
+				margin-bottom: 8px;
+				color: #adadad;
+			}
+			h4{
+				font-size: 16px;
+				margin: 0px;
+				color: #7e7e7e;
+			}
+			&:after{
+				position: absolute;
+				left: -25px;
+				top: 5px;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: #cdcdcd;
+				content: "";
+			}
+			.conv-btn{
+				width: 100%;
+				margin-top: 20px;
+				button{
+					display: inline-block;
+					background: #060e1d;
+					color: #FFF;
+					padding: 10px 0px;
+					text-align: center;
+					width: 49%;
+					border: 0px;
+					height: 40px;
+					border-radius: 5px;
+					font-weight: bold;
+					text-transform: uppercase;
+					vertical-align: middle;
+					img{
+						width: 15px;
+						margin-right: 5px;
+						display: inline-block;
+						vertical-align: middle;
+					}
+					span{
+						display: inline-block;
+						vertical-align: middle;
+					}
+				}
+			}
+			&.active{
+				span{
+					color: #3fd8f9;
+				}
+				h4{
+					color: #000000;
+				}
+				&:after{
+					background: #3fd8f9;
+				}
+			}
+		}
+	}
+}
+
+.flag-btn{
+	background: #060e1d;
+	text-align: center;
+	padding: 10px 0px;
+	color: #FFF;
+	font-weight: bold;
+	img{
+		display: inline-block;
+		vertical-align: middle;
+		width: 20px;
+		margin-right: 5px;
+	}
+	span{
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
