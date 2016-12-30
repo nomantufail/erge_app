@@ -13547,20 +13547,29 @@ ion-item.interested-ppl.item {
     color: #FFF;
     font-size: 11px; }
 
-.form-field, .change-password .change-pass-field, .profile-form-field {
+.form-field, .change-password .change-pass-field, .payment-field, .profile-form-field {
   margin: 0 -5px 20px;
   overflow: hidden; }
-  .form-field label, .change-password .change-pass-field label, .profile-form-field label {
+  .form-field label, .change-password .change-pass-field label, .payment-field label, .profile-form-field label {
     display: block;
     margin-bottom: 10px;
     padding: 0px 5px;
     overflow: hidden; }
-    .form-field label.full-field span, .change-password .change-pass-field label.full-field span, .profile-form-field label.full-field span, .form-field label.half-field span, .change-password .change-pass-field label.half-field span, .profile-form-field label.half-field span {
+    .form-field label.full-field span, .change-password .change-pass-field label.full-field span, .payment-field label.full-field span, .profile-form-field label.full-field span, .form-field label.half-field span, .change-password .change-pass-field label.half-field span, .payment-field label.half-field span, .profile-form-field label.half-field span {
       display: block;
       color: #FFF;
       font-synthesis: 14px;
       margin-bottom: 5px; }
-    .form-field label.full-field input, .change-password .change-pass-field label.full-field input, .profile-form-field label.full-field input, .form-field label.half-field input, .change-password .change-pass-field label.half-field input, .profile-form-field label.half-field input {
+    .form-field label.full-field input, .change-password .change-pass-field label.full-field input, .payment-field label.full-field input, .profile-form-field label.full-field input, .form-field label.half-field input, .change-password .change-pass-field label.half-field input, .payment-field label.half-field input, .profile-form-field label.half-field input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      height: auto;
+      padding: 10px !important;
+      color: #FFF;
+      border: 0px;
+      height: 44px; }
+    .form-field label.full-field textarea, .change-password .change-pass-field label.full-field textarea, .payment-field label.full-field textarea, .profile-form-field label.full-field textarea, .form-field label.half-field textarea, .change-password .change-pass-field label.half-field textarea, .payment-field label.half-field textarea, .profile-form-field label.half-field textarea {
       width: 100%;
       background: rgba(0, 0, 0, 0.1);
       border-radius: 5px;
@@ -13568,22 +13577,14 @@ ion-item.interested-ppl.item {
       padding: 10px !important;
       color: #FFF;
       border: 0px; }
-    .form-field label.full-field textarea, .change-password .change-pass-field label.full-field textarea, .profile-form-field label.full-field textarea, .form-field label.half-field textarea, .change-password .change-pass-field label.half-field textarea, .profile-form-field label.half-field textarea {
-      width: 100%;
-      background: rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-      height: auto;
-      padding: 10px !important;
-      color: #FFF;
-      border: 0px; }
-    .form-field label.half-field, .change-password .change-pass-field label.half-field, .profile-form-field label.half-field {
+    .form-field label.half-field, .change-password .change-pass-field label.half-field, .payment-field label.half-field, .profile-form-field label.half-field {
       float: left;
       width: 50%; }
-    .form-field label button, .change-password .change-pass-field label button, .profile-form-field label button {
+    .form-field label button, .change-password .change-pass-field label button, .payment-field label button, .profile-form-field label button {
       width: 100%;
       text-transform: uppercase;
       margin-top: 20px; }
-  .form-field p, .change-password .change-pass-field p, .profile-form-field p {
+  .form-field p, .change-password .change-pass-field p, .payment-field p, .profile-form-field p {
     color: #FFF;
     text-align: center; }
 
@@ -13628,6 +13629,39 @@ ion-item.interested-ppl.item {
       border: 0px; }
   .forget-widget button {
     width: 100%; }
+
+.payment-page {
+  padding: 20px; }
+
+.payment-head {
+  margin-bottom: 20px; }
+  .payment-head h2 {
+    color: #FFF;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 0; }
+  .payment-head p {
+    font-size: 9px;
+    color: #FFF;
+    margin: 0; }
+
+.payment-option {
+  display: table;
+  width: 100%;
+  margin-bottom: 20px; }
+
+.payment-option label {
+  display: table-cell;
+  padding: 0px 10px;
+  width: 50%;
+  vertical-align: middle; }
+  .payment-option label input {
+    display: inline-block;
+    vertical-align: middle; }
+  .payment-option label img {
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle; }
 
 .blue-btn, .float-left input[type="button"], .float-right input[type="button"], .darkblue-btn {
   border-radius: 5px;
@@ -13863,3 +13897,70 @@ ion-item.interested-ppl.item {
     text-transform: uppercase; }
   .splash-btn p {
     color: #FFF; }
+
+.job-list-section .tab-nav {
+  border-bottom: 0px; }
+  .job-list-section .tab-nav .tab-item {
+    border-bottom: 0px;
+    background: #ffffff;
+    font-size: 12px;
+    font-weight: bold; }
+    .job-list-section .tab-nav .tab-item.tab-item-active {
+      border-bottom: 2px solid #2fd5f8;
+      color: #2fd5f8; }
+
+.job-list-content {
+  padding: 10px;
+  background: #f7f7f7;
+  height: calc(100vh - 93px);
+  margin-top: 93px; }
+
+.job-list li {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #65c2ff;
+  display: table;
+  width: 100%;
+  margin-bottom: 10px;
+  background: #FFF; }
+  .job-list li .user-img {
+    display: table-cell;
+    width: 70px;
+    vertical-align: top; }
+    .job-list li .user-img figure {
+      border-radius: 50%;
+      overflow: hidden;
+      text-align: center;
+      width: 70px;
+      height: 70px; }
+      .job-list li .user-img figure img {
+        width: 100%; }
+  .job-list li figcaption {
+    display: table-cell;
+    width: 75%;
+    vertical-align: top;
+    padding-left: 10px; }
+    .job-list li figcaption .star img {
+      width: 50px; }
+    .job-list li figcaption h4 {
+      margin: 0px;
+      font-size: 14px; }
+    .job-list li figcaption .number {
+      font-size: 11px;
+      margin-bottom: 5px;
+      display: block; }
+    .job-list li figcaption p {
+      font-size: 10px;
+      line-height: 1.5;
+      margin-bottom: 0px; }
+    .job-list li figcaption .price {
+      color: #64d66c;
+      font-size: 14px;
+      font-weight: bold; }
+    .job-list li figcaption .bottom-list p {
+      float: left;
+      font-size: 10px;
+      margin: 0px; }
+    .job-list li figcaption .bottom-list span {
+      float: right;
+      font-size: 10px; }

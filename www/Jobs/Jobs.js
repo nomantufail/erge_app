@@ -1,10 +1,14 @@
 angular.module('erge.Jobs', [])
-    //////////////////////////////////////////////////////////JobsCtrl Controller  start//////////////////////////////////////////////////////////////
-    .controller('JobsCtrl', function($scope, $state, $localstorage, ServerRequest, API, $ionicLoading, Utils, MyHttpRequest) {
+
+//////////////////////////////////////////////////////////JobsCtrl Controller  start//////////////////////////////////////////////////////////////
+.controller('JobsCtrl', function($scope, $state, $localstorage, ServerRequest, API, $ionicLoading, Utils, MyHttpRequest) {
         $scope.boss = true;
         //$scope.jobs_ongoing = [];
         //$scope.onEmptyActive = false;
 
+        $scope.goToJobDetail_new = function() {
+            $state.go('app.ActiveJob_new', { data: {} });
+        };
         $scope.$on("$ionicView.enter", function() {
             $scope.onerror = false;
             //$scope.jobs_ongoing = [];
@@ -12,6 +16,8 @@ angular.module('erge.Jobs', [])
             $scope.user_role = user_data.role;
             if ($scope.user_role == "BOSS") {
                 $scope.boss = true;
+                //$scope.jobs_ongoing = [];
+                //$scope.onEmptyActive = false;
                 if (!Utils.checkConnection()) {
                     Utils.showConnectionDialog();
 
@@ -1130,6 +1136,9 @@ angular.module('erge.Jobs', [])
                 $scope.datepickerObject.showdate = moment.unix(ts).format("MMMM-DD-YYYY");
                 //$scope.datepickerObject.inputDate= moment.unix(ts).format("MMMM-DD-YYYY");
 
+                <<
+                <<
+                << < HEAD
             }
         };
         /*date picker end*/
@@ -1149,7 +1158,47 @@ angular.module('erge.Jobs', [])
                 timePickerCallback(val);
                 console.log(val);
             }
-        };
+        }; ===
+        ===
+        =
+        /*time picker end*/
+    })
+    ////////////////////////////////////////////////////////////////////post job Controller end///////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////ActiveJobCtrl Controller  start///////////////////////////////////////////////////////////////////////////
+.controller('ActiveJobCtrl', function($scope, $state, $cordovaGeolocation, $compile, $stateParams, $ionicPopover, API, Utils, $localstorage, $ionicLoading, ServerRequest) {
+        $scope.activeJobDetails = $stateParams.data;
+        //$scope.activeJobDetails=data;
+        console.log(' $scope.activeJobDetails : ', $scope.activeJobDetails);
+        $scope.position = {
+                startlocation: $scope.activeJobDetails.start_loc,
+                endlocation: $scope.activeJobDetails.dest_loc
+            }
+            /*call function*/
+        $scope.callNumber = function() {
+            console.log('call number function called ');
+            window.plugins.CallNumber.callNumber(onSuccess, onError, $scope.activeJobDetails.mobile_no, true)
+
+            function onSuccess(response) {
+                console.log("success Fun :", response)
+            }
+
+            function onError(response) {
+                console.log("success Fun :", response)
+            }
+        }
+        $scope.sendmessege = function() {
+                var userDataForChat = {
+                    f_name: $scope.activeJobDetails.f_name,
+                    l_name: $scope.activeJobDetails.l_name,
+                    profile_pic: $scope.activeJobDetails.profile_pic,
+                    resciever_id: $scope.activeJobDetails.canidate_id
+                }
+                console.log('sendmessege function called ')
+                $state.go('app.chat_new', { data: userDataForChat });
+            } >>>
+            >>>
+            > 443 b46ef959f115758274ffcd02d8713ee71a55d
 
         function timePickerCallback(val) {
             if (typeof(val) === 'undefined') {

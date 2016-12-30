@@ -1,0 +1,44 @@
+.payment-page{
+	padding: 20px;
+}
+
+.payment-head{
+	margin-bottom: 20px;
+	h2{
+		color: #FFF;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin: 0;
+	}
+	p{
+		font-size: 9px;
+		color: #FFF;
+		margin: 0;
+	}
+}
+.payment-option{
+	display: table;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.payment-option label{
+	display: table-cell;
+	padding: 0px 10px;
+	width: 50%;
+	vertical-align: middle;
+	input{
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	img{
+		width: 100px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+.payment-field{
+	@extend .form-field;
+}
