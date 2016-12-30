@@ -1,77 +1,77 @@
 <ion-side-menus enable-menu-with-back-views="false">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
 
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
-      </ion-nav-buttons>
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
-  </ion-side-menu-content>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
 
-  <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">ERGE</h1>
-    </ion-header-bar>
-    <ion-content>
-      <div class="side-bar-pro">
-        <figure>
-          <img src="{{user_profile_pic}}" alt="">
-        </figure>
-        <h4>Zaroon Junaid</h4>
-        <span><img src="img/map-pointer.png" alt=""> HOUSTON, TEXAS</span>
-      </div>
-      <!-- <div style="width: 100%">
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">ERGE</h1>
+        </ion-header-bar>
+        <ion-content>
+            <div class="side-bar-pro">
+                <figure>
+                    <img ng-src="{{user_profile_pic}}" alt="">
+                </figure>
+                <h4>Zaroon Junaid</h4>
+                <span><img src="img/map-pointer.png" alt=""> HOUSTON, TEXAS</span>
+            </div>
+            <!-- <div style="width: 100%">
         <img src="{{user_profile_pic}}"
              style="height: 100px;width: 100px; margin: 5% 31% 7%;border-radius: 50%;border: 4px solid gainsboro;">
       </div> -->
-      <ion-list class="main-nav">
-        <!--<div class="list list-inset">
+            <ion-list class="main-nav">
+                <!--<div class="list list-inset">
           <label class="item item-input">
             <i class="icon ion-search placeholder-icon"></i>
             <input type="text" placeholder="Search">
           </label>
         </div>-->
-        <ion-item menu-close href="#/app/home">
-          <!-- <i><img src="img/home_icon.png"></i> -->
-          HOME
-        </ion-item>
-        <ion-item menu-close href="#/app/jobs/new">
-          <!-- <i><img src="img/jobs_icon.png"></i> -->
-          JOBS
-        </ion-item>
-        <ion-item menu-close href="#/app/profile">
-          <!-- <i class="menu-icons"><img src="img/fro.png"></i> -->
-          <!--<i class="ion-person"></i>-->
-          PROFILE
-        </ion-item>
-        <ion-item menu-close href="#/app/payment_settings">
-          Payment Settings
-        </ion-item>
+                <ion-item menu-close href="#/app/home">
+                    <!-- <i><img src="img/home_icon.png"></i> -->
+                    HOME
+                </ion-item>
+                <ion-item menu-close href="#/app/jobs/new">
+                    <!-- <i><img src="img/jobs_icon.png"></i> -->
+                    JOBS
+                </ion-item>
+                <ion-item menu-close href="#/app/profile">
+                    <!-- <i class="menu-icons"><img src="img/fro.png"></i> -->
+                    <!--<i class="ion-person"></i>-->
+                    PROFILE
+                </ion-item>
+                <ion-item menu-close href="#/app/payment_settings">
+                    Payment Settings
+                </ion-item>
 
-        <ion-item menu-close ng-show="user_conscierge" href="#/app/Payment">
-          <!-- <i class="menu-icons"><img src="img/payments.png"></i> -->
-          <!--<i class="ion-person"></i>-->
-          PAYMENTS
-        </ion-item>
+                <ion-item menu-close ng-show="user_conscierge" href="#/app/Payment">
+                    <!-- <i class="menu-icons"><img src="img/payments.png"></i> -->
+                    <!--<i class="ion-person"></i>-->
+                    PAYMENTS
+                </ion-item>
 
 
-        <ion-item menu-close href="#/app/changePassword">
-          <!-- <i class="menu-icons"><img src="img/changepassword_icon.png"></i> -->
-          CHANGE PASSWORD
-        </ion-item>
-        <ion-item menu-close ng-click="logout()" href="#/">
-          <!-- <i class="menu-icons"><img src="img/logout_icon.png"></i> -->
-          LOGOUT
-        </ion-item>
-        <!--<ion-item menu-close class="menu-items" ng-click="testFun()" href="#/">
+                <ion-item menu-close href="#/app/changePassword">
+                    <!-- <i class="menu-icons"><img src="img/changepassword_icon.png"></i> -->
+                    CHANGE PASSWORD
+                </ion-item>
+                <ion-item menu-close ng-click="logout()" href="#/">
+                    <!-- <i class="menu-icons"><img src="img/logout_icon.png"></i> -->
+                    LOGOUT
+                </ion-item>
+                <!--<ion-item menu-close class="menu-items" ng-click="testFun()" href="#/">
           <i class="menu-icons"><img src="img/logout_icon.png"></i>
           test button
         </ion-item>-->
-      </ion-list>
-    </ion-content>
-  </ion-side-menu>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
 </ion-side-menus>

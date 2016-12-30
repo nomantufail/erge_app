@@ -29,7 +29,7 @@
 
             <div class="top-search" disable-tap>
                 <div class="top-search-input">
-                    <input type="text" id="autocomplete" class="form-control" ng-autocomplete ng-model="jobLocations.startlocation" flag="start" placeholder="Enter Point of pick up" />
+                    <input type="text" id="autocomplete" class="form-control" ng-autocomplete ng-model="jobLocations.startlocation" flag="start" ng-focus="disableTap()" placeholder="Enter Point of pick up" data-tap-disabled="true" />
                     <img class="top-search-cross" src="img/active-past_jobs_13.png" ng-click="clearStartLocation()">
 
                 </div>

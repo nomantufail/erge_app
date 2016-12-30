@@ -728,7 +728,6 @@ angular.module('erge.Jobs', [])
         //     }
         // }
 
-
         /*upload image function end */
         $scope.postJob = function() {
             // if ($scope.details_for_postJob.startLocation == "") {
