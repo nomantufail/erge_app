@@ -1,72 +1,72 @@
 <!--PostJobCtrl-->
 <ion-view view-title="ERGE">
-  <ion-content class="job-post-bg">
-    <div class="job-post">
-      <div class="post-head">
-        <h4>Post a Job</h4>
-        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.</p>
-      </div>
-      <label class="file-upload">
+    <ion-content class="job-post-bg">
+        <div class="job-post">
+            <div class="post-head">
+                <h4>Post a Job</h4>
+                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.</p>
+            </div>
+            <label class="file-upload">
         <input type="file" name="">
       </label>
-      <div class="post-field">
-        <label class="full-field">
+            <div class="post-field">
+                <label class="full-field">
           <span>Destination Location</span>
           <input type="text" name="" placeholder="Location" ng-model="details_for_postJob.startLocation" disabled>
         </label>
-        <label class="full-field">
-          <span>Jon Description</span>
-          <textarea placeholder="Description" ng-model="details_for_postJob.jobDedcription" ng-disabled="editorEnabled">
+                <label class="full-field">
+          <span>Job Description</span>
+          <textarea placeholder="Description" ng-model="details_for_postJob.jobDedcription" >
             
           </textarea>
         </label>
-        <label class="half-field">
+                <label class="half-field">
           <span>Rewards</span>
           <input type="number" name="" ng-model="details_for_postJob.job_price" placeholder="$">
         </label>
-        <label class="half-field">
+                <label class="half-field">
           <span>Tip Amount</span>
           <input type="number" name="" placeholder="$">
         </label>
-      </div>
-      <div class="visibility-radius">
-        <span>Job Visibility Radius</span>
-      </div>
-      <div class="post-bottom">
-        <div class="miles">
-          <img src="img/miles.png" alt="">
-          <p>Estimated Miles</p>
-          <span>9mi</span>
+            </div>
+            <div class="visibility-radius">
+                <span>Job Visibility Radius</span>
+            </div>
+            <div class="post-bottom">
+                <div class="miles">
+                    <img src="img/miles.png" alt="">
+                    <p>Estimated Miles</p>
+                    <span>9mi</span>
+                </div>
+                <div class="cost">
+                    <img src="img/cost.png" alt="">
+                    <p>Estimate Cost</p>
+                    <span>25$</span>
+                </div>
+            </div>
+            <div class="post-btn">
+                <button class="blue-btn" ng-click="postJob()">Post</button>
+            </div>
         </div>
-        <div class="cost">
-          <img src="img/cost.png" alt="">
-          <p>Estimate Cost</p>
-          <span>25$</span>
-        </div>
-      </div>
-      <div class="post-btn">
-        <button class="blue-btn" ng-click="postJob()">Post</button>
-      </div>
-    </div>
 
 
-    <!-- old post detail -->
+        <!-- old post detail -->
 
-    <!-- <div class="jobDetails-container"> -->
-      <!--destination location-->
-      <!-- <div class="blocks">
+        <!-- <div class="jobDetails-container"> -->
+        <!--destination location-->
+        <!-- <div class="blocks">
         <span>DESTINATION LOCATION</span>
 
         <p><input type="text" ng-model="details_for_postJob.startLocation" class="large-box" disabled></p> -->
         <!-- <div class="edit-img"><img src="img/Profile_edit_off.png" alt=""> </div>-->
-      <!-- </div>
+        <!-- </div>
       <div class="blocks"> -->
         <!--End location location-->
         <!-- <span>END LOCATION</span>
 
         <p><input type="text" ng-model="details_for_postJob.endLocation" class="large-box" disabled></p> -->
         <!--<div class="edit-img"><img src="img/Profile_edit_off.png" alt=""> </div>-->
-      <!-- </div>
+        <!-- </div>
       <div class="blocks"> -->
         <!--Job details-->
         <!-- <span>JOB DESCRIPTION</span>
@@ -76,8 +76,8 @@
 
         <div class="edit-img" ng-click="editDiscripttion()"><img src="img/{{editbutton}}" alt=""></div>
       </div> -->
-      <!--set fair for job-->
-      <!-- <div class="blocks">
+        <!--set fair for job-->
+        <!-- <div class="blocks">
         <span>REWARDS ($)</span>
         <span><input type="number" ng-model="details_for_postJob.job_price" class="reward-box"></span>
       </div>
@@ -109,27 +109,26 @@
         </span> -->
         <!-- time Picker-->
 
-      <!-- </div> -->
-      <!--Set radioud for search job-->
-      <!-- <div class="blocks" style="padding-bottom: 45px;">
+        <!-- </div> -->
+        <!--Set radioud for search job-->
+        <!-- <div class="blocks" style="padding-bottom: 45px;">
         <span>JOB VISIBILITY RADIUS (miles)</span>
         <span><input type="number" ng-model="details_for_postJob.job_radius" class="reward-box"></span>
       </div>
     </div> -->
-    <!--post job button-->
-    <!-- <div class="job-detail-bottom">
+        <!--post job button-->
+        <!-- <div class="job-detail-bottom">
       <span class="job-icon" ng-show="chnageCamraIcon"><img src="img/14_PostJob_11.png" alt=""
                                                             ng-click="showActionsheet()"></span>
 
       <span class="job-icon" ng-hide="chnageCamraIcon"><img src="img/14_completeJobs_11.png" alt=""
                                                             ng-click="openImageViewerPopover($event)"></span> -->
-      <!--showConResPopOver openImageViewerPopover-->
-      <!-- <span class="post-btn"><input type="button" value="POST" ng-click="postJob()"></span>
+        <!--showConResPopOver openImageViewerPopover-->
+        <!-- <span class="post-btn"><input type="button" value="POST" ng-click="postJob()"></span>
     </div> -->
-    <!--openPostJobPopover($event)-->
-    <!-- my-pop-over="Jobs/PostJobPopover.html" ng-click="openPopover($event)"
+        <!--openPostJobPopover($event)-->
+        <!-- my-pop-over="Jobs/PostJobPopover.html" ng-click="openPopover($event)"
      my-pop-over="Jobs/ImegeViewerPopover.html" ng-click="openPostJobPopover($event)"-->
 
-  </ion-content>
+    </ion-content>
 </ion-view>
-

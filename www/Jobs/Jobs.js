@@ -1,7 +1,6 @@
 angular.module('erge.Jobs', [])
-
-//////////////////////////////////////////////////////////JobsCtrl Controller  start//////////////////////////////////////////////////////////////
-.controller('JobsCtrl', function($scope, $state, $localstorage, ServerRequest, API, $ionicLoading, Utils, MyHttpRequest) {
+    //////////////////////////////////////////////////////////JobsCtrl Controller  start//////////////////////////////////////////////////////////////
+    .controller('JobsCtrl', function($scope, $state, $localstorage, ServerRequest, API, $ionicLoading, Utils, MyHttpRequest) {
         $scope.boss = true;
         //$scope.jobs_ongoing = [];
         //$scope.onEmptyActive = false;
@@ -16,8 +15,6 @@ angular.module('erge.Jobs', [])
             $scope.user_role = user_data.role;
             if ($scope.user_role == "BOSS") {
                 $scope.boss = true;
-                //$scope.jobs_ongoing = [];
-                //$scope.onEmptyActive = false;
                 if (!Utils.checkConnection()) {
                     Utils.showConnectionDialog();
 
@@ -421,53 +418,52 @@ angular.module('erge.Jobs', [])
     })
 
 .controller('PendingJobsListCtrl', function($scope, $state, Utils, $stateParams, $ionicPopover) {
-    $scope.PendingJobsList = $stateParams.data;
-    $scope.ImgViewerDeleteBtn = false;
-    console.log('$scope.PendingJobsList : ', $scope.PendingJobsList)
-    $scope.getStyleForImgViewer = function() {
-            if (!$scope.ImgViewerDeleteBtn)
-                return { height: '362px' }
+        $scope.PendingJobsList = $stateParams.data;
+        $scope.ImgViewerDeleteBtn = false;
+        console.log('$scope.PendingJobsList : ', $scope.PendingJobsList)
+        $scope.getStyleForImgViewer = function() {
+                if (!$scope.ImgViewerDeleteBtn)
+                    return { height: '362px' }
+            }
+            /*Img viewer popover start*/
+        $scope.popoverImgView = $ionicPopover.fromTemplate('Jobs/ImegeViewerPopover.html', {
+            scope: $scope
+        });
+        // .fromTemplateUrl() method
+        $ionicPopover.fromTemplateUrl('Jobs/ImegeViewerPopover.html', {
+            scope: $scope
+        }).then(function(popover) {
+            $scope.popoverImgView = popover;
+        });
+        $scope.openImageViewerPopover = function(imgUrl) {
+            console.log('openImageViewerPopover fun called');
+            $scope.image_file_uri = imgUrl;
+            $scope.popoverImgView.show();
+        };
+        $scope.closePopoverimgView = function() {
+            $scope.image_file_uri = "";
+            $scope.popoverImgView.hide();
+        };
+        //Cleanup the popover when we're done with it!
+        $scope.$on('$destroy', function() {
+            $scope.popoverImgView.remove();
+        });
+        // Execute action on hide popover
+        $scope.$on('popover.hidden', function() {
+            // Execute action
+        });
+        // Execute action on remove popover
+        $scope.$on('popover.removed', function() {
+            // Execute action
+        });
+        /*Img viewer popover end*/
+        $scope.goToSinglePendingJobDetailsView = function(item) {
+            console.log('go to single pending job details view');
+            $state.go('app.singlePendingJonDetails', { data: item });
         }
-        /*Img viewer popover start*/
-    $scope.popoverImgView = $ionicPopover.fromTemplate('Jobs/ImegeViewerPopover.html', {
-        scope: $scope
-    });
-    // .fromTemplateUrl() method
-    $ionicPopover.fromTemplateUrl('Jobs/ImegeViewerPopover.html', {
-        scope: $scope
-    }).then(function(popover) {
-        $scope.popoverImgView = popover;
-    });
-    $scope.openImageViewerPopover = function(imgUrl) {
-        console.log('openImageViewerPopover fun called');
-        $scope.image_file_uri = imgUrl;
-        $scope.popoverImgView.show();
-    };
-    $scope.closePopoverimgView = function() {
-        $scope.image_file_uri = "";
-        $scope.popoverImgView.hide();
-    };
-    //Cleanup the popover when we're done with it!
-    $scope.$on('$destroy', function() {
-        $scope.popoverImgView.remove();
-    });
-    // Execute action on hide popover
-    $scope.$on('popover.hidden', function() {
-        // Execute action
-    });
-    // Execute action on remove popover
-    $scope.$on('popover.removed', function() {
-        // Execute action
-    });
-    /*Img viewer popover end*/
-    $scope.goToSinglePendingJobDetailsView = function(item) {
-        console.log('go to single pending job details view');
-        $state.go('app.singlePendingJonDetails', { data: item });
-    }
 
-})
-
-.controller('ActiveJobsListCtrl', function($scope, Utils, $stateParams, $ionicPopover, $state) {
+    })
+    .controller('ActiveJobsListCtrl', function($scope, Utils, $stateParams, $ionicPopover, $state) {
         $scope.ActiveJobsList = $stateParams.data;
 
         $scope.ImgViewerDeleteBtn = false;
@@ -570,31 +566,34 @@ angular.module('erge.Jobs', [])
 
 ////////////////////////////////////////////////////////////////////PostJobsCtrl Controller start///////////////////////////////////////////////////////////////////////////
 .controller('PostJobsCtrl', function($scope, $state, $ionicPopover, $stateParams, Utils, $ionicLoading, $localstorage, API, $ionicActionSheet, ServerRequest, $ionicHistory, MyHttpRequest) {
-        console.log($stateParams.data);
+
         var user_data = $localstorage.getObject('user_data');
-        $scope.image_file_uri = $stateParams.data.img;
+        $scope.image_file_uri = '';
         $scope.details_for_postJob = {
-            startLocation: $stateParams.data.startLocation,
-            endLocation: $stateParams.data.endLocation,
-            jobDedcription: $stateParams.data.jobDedcription,
+            startLocation: $stateParams.data.startlocation,
+            endLocation: $stateParams.data.endlocation,
+            jobDedcription: '',
             job_price: 0,
-            job_radius: 0,
-            job_due_date: "DD-MM-YY",
-            job_due_time: "",
-            dateTimeForJob: ""
+            job_radius: 40,
+            job_due_date: 'DD-MM-YY',
+            job_due_time: '',
+            dateTimeForJob: ''
+        }
+        $scope.LatLongs = {
+            start_lat: '',
+            start_long: '',
+            end_lat: '',
+            end_long: ''
         }
 
 
-        console.log($scope.details_for_postJob)
+        // console.log($scope.details_for_postJob)
         $scope.ImgViewerDeleteBtn = true;
         /*$scope.getStyleForImgViewer = function () {
          if (!$scope.ImgViewerDeleteBtn)
          return {height: '362px'}
          }*/
         $scope.$on("$ionicView.enter", function() {
-            $scope.details_for_postJob.endLocation = $stateParams.data.endLocation;
-            $scope.details_for_postJob.jobDedcription = $stateParams.data.jobDedcription;
-            //     start and end point call
             Utils.getAddressToLatLong($scope.details_for_postJob.startLocation).then(function(data) {
                 $scope.LatLongs.start_lat = data.Latitude;
                 $scope.LatLongs.start_long = data.Longitude;
@@ -606,7 +605,6 @@ angular.module('erge.Jobs', [])
         })
         $scope.$watch(function() {
             return $scope.image_file_uri;
-
         }, function() {
             if ($scope.image_file_uri == "") {
                 $scope.chnageCamraIcon = true;
@@ -615,135 +613,132 @@ angular.module('erge.Jobs', [])
             }
 
         });
-        $scope.LatLongs = {
-                start_lat: '',
-                start_long: '',
-                end_lat: '',
-                end_long: ''
-            }
-            /*upload img function start */
+
+
+        /*upload img function start */
         $scope.showActionsheet = function() {
-                $ionicActionSheet.show({
-                    titleText: 'UPLOAD IMAGE',
-                    buttons: [
-                        { text: '<i class="icon ion-images"></i> OPEN GALERY' },
-                        { text: '<i class="icon ion-camera"></i> OPEN CAMERA' },
-                    ],
-                    //destructiveText: 'Delete',
-                    cancelText: 'Cancel',
-                    cancel: function() {
-                        console.log('CANCELLED');
-                    },
-                    buttonClicked: function(index) {
-                        if (index == 0) {
-                            $scope.openImageLibraryFunction();
-                            return true;
-                        } else if (index == 1)
-                            $scope.takeNewPictureFunction();
+
+            $ionicActionSheet.show({
+                titleText: 'UPLOAD IMAGE',
+                buttons: [
+                    { text: '<i class="icon ion-images"></i> OPEN GALERY' },
+                    { text: '<i class="icon ion-camera"></i> OPEN CAMERA' },
+                ],
+                //destructiveText: 'Delete',
+                cancelText: 'Cancel',
+                cancel: function() {
+                    console.log('CANCELLED');
+                },
+                buttonClicked: function(index) {
+                    if (index == 0) {
+                        $scope.openImageLibraryFunction();
                         return true;
-                    },
+                    } else if (index == 1)
+                        $scope.takeNewPictureFunction();
+                    return true;
+                },
+            });
+
+            $scope.openImageLibraryFunction = function() {
+                navigator.camera.getPicture(onSuccess, onFail, {
+                    destinationType: Camera.DestinationType.FILE_URI,
+                    sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                    allowEdit: false,
+                    correctOrientation: true
                 });
-                $scope.openImageLibraryFunction = function() {
 
-                    navigator.camera.getPicture(onSuccess, onFail, {
-                        destinationType: Camera.DestinationType.FILE_URI,
-                        sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-                        allowEdit: false,
-                        correctOrientation: true
-                    });
+                function onSuccess(imageURI) {
+                    $scope.image_file_uri = imageURI;
+                    var res = $scope.image_file_uri.match(/content/g);
+                    if (res == "content") {
+                        window.FilePath.resolveNativePath($scope.image_file_uri, successCallback, errorCallback);
 
-                    function onSuccess(imageURI) {
-                        $scope.image_file_uri = imageURI;
-                        var res = $scope.image_file_uri.match(/content/g);
-                        if (res == "content") {
-                            window.FilePath.resolveNativePath($scope.image_file_uri, successCallback, errorCallback);
-
-                            function successCallback(value) {
-                                $scope.image_file_uri = value;
-                                console.log('img file uri converted , and value is : ', value)
-                            }
-
-                            function errorCallback(code, message) {
-                                $scope.image_file_uri = "";
-                                console.log('error code ', code)
-                                console.log('error msg ', message)
-                            }
+                        function successCallback(value) {
+                            $scope.image_file_uri = value;
+                            console.log('img file uri converted , and value is : ', value)
                         }
-                        if ($scope.image_file_uri != "") {
-                            $scope.openImageViewerPopover();
+
+                        function errorCallback(code, message) {
+                            $scope.image_file_uri = "";
+                            console.log('error code ', code)
+                            console.log('error msg ', message)
                         }
-                        //Ext.getCmp('profilePicId').setSrc(imageURI);
-                        //showLoader();
-                        Utils.showToast(imageURI + '==')
-                            //me.saveProfilePic(imageURI);
                     }
-
-                    function onFail(message) {
-                        //hideLoader();
-                        Utils.showToast(message, 'short');
-                        // toastLong("");
-                    }
-                }
-                $scope.takeNewPictureFunction = function() {
-                    Utils.showToast('takeNewPictureFunction called');
-                    navigator.camera.getPicture(onSuccess, onFail, {
-                        //quality: 100,
-                        destinationType: 1,
-                        sourceType: Camera.PictureSourceType.CAMERA,
-                        allowEdit: false,
-                        //encodingType: Camera.EncodingType.JPEG,
-                        /*targetWidth: 100,
-                         targetHeight: 100,*/
-                        //popoverOptions: CameraPopoverOptions,
-                        // saveToPhotoAlbum: true,
-                        //cameraDirection: 1,
-                        correctOrientation: true
-                    });
-
-                    function onSuccess(imageURI) {
-                        $scope.image_file_uri = imageURI;
+                    if ($scope.image_file_uri != "") {
                         $scope.openImageViewerPopover();
-                        //Ext.getCmp('profilePicId').setSrc(imageURI);
-                        //showLoader();
-                        //Utils.showToast(imageURI + '==')
+                    }
+                    //Ext.getCmp('profilePicId').setSrc(imageURI);
+                    //showLoader();
+                    Utils.showToast(imageURI + '==')
                         //me.saveProfilePic(imageURI);
-                    }
+                }
 
-                    function onFail(message) {
-                        //hideLoader();
-                        Utils.showToast(message, long);
-                        // toastLong("");
-                    }
+                function onFail(message) {
+                    //hideLoader();
+                    Utils.showToast(message, 'short');
+                    // toastLong("");
                 }
             }
-            /*$scope.editDiscripttion = function () {
-             $scope.edit_discrittion=true;
-             }*/
-        $scope.editorEnabled = true;
-        $scope.isEditable = false;
-        $scope.editbutton = 'Profile_edit_on.png';
-        $scope.editDiscripttion = function() {
-            if ($scope.isEditable == false) {
-                $scope.editorEnabled = false;
-                $scope.isEditable = true;
-                $scope.editbutton = 'Profile_edit_off.png'
-            } else {
-                $scope.editorEnabled = true;
-                $scope.isEditable = false;
-                $scope.editbutton = 'Profile_edit_on.png'
+            $scope.takeNewPictureFunction = function() {
+                // Utils.showToast('takeNewPictureFunction called');
+                navigator.camera.getPicture(onSuccess, onFail, {
+                    //quality: 100,
+                    destinationType: 1,
+                    sourceType: Camera.PictureSourceType.CAMERA,
+                    allowEdit: false,
+                    //encodingType: Camera.EncodingType.JPEG,
+                    /*targetWidth: 100,
+                     targetHeight: 100,*/
+                    //popoverOptions: CameraPopoverOptions,
+                    // saveToPhotoAlbum: true,
+                    //cameraDirection: 1,
+                    correctOrientation: true
+                });
+
+                function onSuccess(imageURI) {
+                    $scope.image_file_uri = imageURI;
+                    $scope.openImageViewerPopover();
+                    //Ext.getCmp('profilePicId').setSrc(imageURI);
+                    //showLoader();
+                    //Utils.showToast(imageURI + '==')
+                    //me.saveProfilePic(imageURI);
+                }
+
+                function onFail(message) {
+                    //hideLoader();
+                    Utils.showToast(message, long);
+                    // toastLong("");
+                }
             }
         }
+
+        //edit description
+        // $scope.editorEnabled = true;
+        // $scope.isEditable = false;
+        // $scope.editbutton = 'Profile_edit_on.png';
+        // $scope.editDiscripttion = function() {
+        //     if ($scope.isEditable == false) {
+        //         $scope.editorEnabled = false;
+        //         $scope.isEditable = true;
+        //         $scope.editbutton = 'Profile_edit_off.png'
+        //     } else {
+        //         $scope.editorEnabled = true;
+        //         $scope.isEditable = false;
+        //         $scope.editbutton = 'Profile_edit_on.png'
+        //     }
+        // }
 
 
         /*upload image function end */
         $scope.postJob = function() {
-            if ($scope.details_for_postJob.startLocation == "") {
-                Utils.showToast('Select start location', 'short');
-                return;
-            } else if ($scope.details_for_postJob.startLocation == "") {
-                Utils.showToast('Select end location', 'short');
-                return;
-            } else if ($scope.details_for_postJob.jobDedcription == "") {
+            // if ($scope.details_for_postJob.startLocation == "") {
+            //     Utils.showToast('Select start location', 'short');
+            //     return;
+            // } else if ($scope.details_for_postJob.startLocation == "") {
+            //     Utils.showToast('Select end location', 'short');
+            //     return;
+            // } 
+            if ($scope.details_for_postJob.jobDedcription == "") {
                 Utils.showToast('Specify some description for job', 'short');
                 return;
             } else if ($scope.details_for_postJob.job_price == 0) {
@@ -764,14 +759,17 @@ angular.module('erge.Jobs', [])
             } else if (isNaN($scope.details_for_postJob.job_radius)) {
                 Utils.showToast('Specify valid radiud for job', 'short');
                 return;
-            } else if ($scope.details_for_postJob.job_due_date == "DD-MM-YY") {
-                Utils.showToast('Select date for job', 'short');
-                return;
-            } else if ($scope.details_for_postJob.job_due_time == "") {
-                Utils.showToast('Select time for job', 'short');
-                return;
-
             }
+
+            // else if ($scope.details_for_postJob.job_due_date == "DD-MM-YY") {
+            //     Utils.showToast('Select date for job', 'short');
+            //     return;
+            // } else if ($scope.details_for_postJob.job_due_time == "") {
+            //     Utils.showToast('Select time for job', 'short');
+            //     return;
+
+            // }
+
             /*else if ($scope.details_for_postJob.img == "") {
              Utils.confirmForJostingJobWithoutImg();
              //Utils.showToast('Attach some imge that can help conscierge to understand about job', 'short');
@@ -780,7 +778,9 @@ angular.module('erge.Jobs', [])
             else {
                 if ($scope.LatLongs.start_lat != "" && $scope.LatLongs.start_long != "" && $scope.LatLongs.end_lat != "" && $scope.LatLongs.end_long != "") {
 
-                    $scope.details_for_postJob.dateTimeForJob = $scope.details_for_postJob.job_due_date + $scope.details_for_postJob.job_due_time;
+                    // $scope.details_for_postJob.dateTimeForJob = $scope.details_for_postJob.job_due_date + $scope.details_for_postJob.job_due_time;
+                    var today = new Date();
+                    $scope.details_for_postJob.dateTimeForJob = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
                     //console.log('date unix ::', $scope.details_for_postJob.job_due_date);
                     //console.log('time unix ::', $scope.details_for_postJob.job_due_time);
                     //console.log('date and time unix  ::', $scope.details_for_postJob.dateTimeForJob);
@@ -800,15 +800,15 @@ angular.module('erge.Jobs', [])
                                 if (buttonIndex == 1) {
                                     //post button
                                     $scope.createJobWithoutimg();
-                                    console.log(buttonIndex + "");
+                                    // console.log(buttonIndex + "");
                                 } else if (buttonIndex == 2) {
                                     //uplaod now button
                                     $scope.showActionsheet();
-                                    console.log(buttonIndex + "");
+                                    // console.log(buttonIndex + "");
                                 }
                             }
                         } else {
-                            alert('jon can not post by browser');
+                            alert('job can not post by browser');
                         }
                     } else {
                         //post job when img is uploaded
@@ -887,12 +887,10 @@ angular.module('erge.Jobs', [])
             };
             MyHttpRequest("createJob", 'POST', params, false, true).then(function(response) {
                 $ionicLoading.hide();
-                console.log(response);
+                // console.log(response);
                 if (response != null) {
                     if (response.status == "success") {
                         Utils.showToast("Job posted successfully", "short");
-
-
                         $scope.details_for_postJob = {
                             startLocation: "",
                             endLocation: "",
@@ -904,11 +902,11 @@ angular.module('erge.Jobs', [])
                             dateTimeForJob: ""
                         }
                         $scope.image_file_uri = "";
-                        $scope.selectedDate = {
-                            secDate: "",
-                            secTime: "SELECT TIME",
-                            secTimeVal: ""
-                        }
+                        // $scope.selectedDate = {
+                        //     secDate: "",
+                        //     secTime: "SELECT TIME",
+                        //     secTimeVal: ""
+                        // }
 
                         $ionicHistory.nextViewOptions({
                             disableBack: true
@@ -926,7 +924,7 @@ angular.module('erge.Jobs', [])
                         } else {
                             Utils.showToast('Error in posting job', 'short');
                         }
-                        console.log(response);
+                        // console.log(response);
                     }
                 } else {
                     Utils.showNetworkProblemDialog();
@@ -962,16 +960,15 @@ angular.module('erge.Jobs', [])
 
         /*create job function , upload img for job START*/
         function createJobWithImgFun(imageURI) {
-            console.log("createJobFun");
+            // console.log("createJobFun");
             rr = imageURI;
             var fail = function(error) {
                 $ionicLoading.hide();
                 console.log(error)
-                Utils.showToast('error in uploading img ERROR', 'short');
+                Utils.showToast('Could not upload image', 'short');
             }
             var win = function(r) {
                     $ionicLoading.hide();
-                    console.log("win fun");
                     var rr = JSON.parse(r.response);
                     if (rr.status == "success") {
                         Utils.showToast("Job posted successfully", "short");
@@ -1014,10 +1011,10 @@ angular.module('erge.Jobs', [])
                     //console.log(r.response.Data);
                     //$scope.profileData = $scope.image_file_uri;
 
-                    console.log(rr.Data);
-                    console.log("Code = " + r.responseCode);
-                    console.log("Response = ", r.response);
-                    console.log("Sent = " + r.bytesSent);
+                    // console.log(rr.Data);
+                    // console.log("Code = " + r.responseCode);
+                    // console.log("Response = ", r.response);
+                    // console.log("Sent = " + r.bytesSent);
                 }
                 //var options = new FileUploadOptions();
             var options = new FileUploadOptions();
@@ -1047,11 +1044,11 @@ angular.module('erge.Jobs', [])
                 "visibility_radius": $scope.details_for_postJob.job_radius
             };
             options.params = params;
-            console.log(options);
-            console.log(params);
+            // console.log(options);
+            // console.log(params);
             var ft = new FileTransfer();
             ft.onprogress = function(progressEvent) {
-                console.log(progressEvent.loaded / progressEvent.total);
+                // console.log(progressEvent.loaded / progressEvent.total);
             };
             ft.upload(imageURI, encodeURI(API.BASE_URL + 'createJob'), win, fail, options);
         }
@@ -1136,9 +1133,6 @@ angular.module('erge.Jobs', [])
                 $scope.datepickerObject.showdate = moment.unix(ts).format("MMMM-DD-YYYY");
                 //$scope.datepickerObject.inputDate= moment.unix(ts).format("MMMM-DD-YYYY");
 
-                <<
-                <<
-                << < HEAD
             }
         };
         /*date picker end*/
@@ -1158,47 +1152,7 @@ angular.module('erge.Jobs', [])
                 timePickerCallback(val);
                 console.log(val);
             }
-        }; ===
-        ===
-        =
-        /*time picker end*/
-    })
-    ////////////////////////////////////////////////////////////////////post job Controller end///////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////ActiveJobCtrl Controller  start///////////////////////////////////////////////////////////////////////////
-.controller('ActiveJobCtrl', function($scope, $state, $cordovaGeolocation, $compile, $stateParams, $ionicPopover, API, Utils, $localstorage, $ionicLoading, ServerRequest) {
-        $scope.activeJobDetails = $stateParams.data;
-        //$scope.activeJobDetails=data;
-        console.log(' $scope.activeJobDetails : ', $scope.activeJobDetails);
-        $scope.position = {
-                startlocation: $scope.activeJobDetails.start_loc,
-                endlocation: $scope.activeJobDetails.dest_loc
-            }
-            /*call function*/
-        $scope.callNumber = function() {
-            console.log('call number function called ');
-            window.plugins.CallNumber.callNumber(onSuccess, onError, $scope.activeJobDetails.mobile_no, true)
-
-            function onSuccess(response) {
-                console.log("success Fun :", response)
-            }
-
-            function onError(response) {
-                console.log("success Fun :", response)
-            }
-        }
-        $scope.sendmessege = function() {
-                var userDataForChat = {
-                    f_name: $scope.activeJobDetails.f_name,
-                    l_name: $scope.activeJobDetails.l_name,
-                    profile_pic: $scope.activeJobDetails.profile_pic,
-                    resciever_id: $scope.activeJobDetails.canidate_id
-                }
-                console.log('sendmessege function called ')
-                $state.go('app.chat_new', { data: userDataForChat });
-            } >>>
-            >>>
-            > 443 b46ef959f115758274ffcd02d8713ee71a55d
+        };
 
         function timePickerCallback(val) {
             if (typeof(val) === 'undefined') {
@@ -1259,7 +1213,7 @@ angular.module('erge.Jobs', [])
                 resciever_id: $scope.activeJobDetails.canidate_id
             }
             console.log('sendmessege function called ')
-            $state.go('app.chat', { data: userDataForChat });
+            $state.go('app.chat_new', { data: userDataForChat });
         }
 
         /*ratings stars*/

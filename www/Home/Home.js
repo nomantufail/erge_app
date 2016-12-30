@@ -4,7 +4,10 @@ angular.module('erge.Home', ['ionic', 'ngCordova', 'google.places'])
         //variables for job details
         home = $cordovaCamera;
         $scope.position = [];
-
+        $scope.jobLocations = {
+            startlocation: "",
+            endlocation: "",
+        };
 
         /* setTimeout(function () {
          var fromField = document.getElementById('fromLocation');
@@ -28,13 +31,20 @@ angular.module('erge.Home', ['ionic', 'ngCordova', 'google.places'])
             var clear_after_post = $localstorage.get('clear_after_post');
 
             if (clear_after_post == 0 || clear_after_post == 'undefined' || clear_after_post == null) {
-                console.log('clear_after_post ', clear_after_post);
+                // console.log('clear_after_post ', clear_after_post);
             } else if (clear_after_post == 1) {
+
                 $scope.jobLocations.startlocation = "";
                 $scope.jobLocations.endlocation = "";
                 $scope.$broadcast('refresh_map');
                 $localstorage.set('clear_after_post', 0);
             }
+            Utils.getLatLongFun().then(function(data) {
+                var value = data.Latitude + "," + data.Longitude;
+                Utils.getLatLongToAddress(value).then(function(place) {
+                    $scope.jobLocations.endlocation = place;
+                })
+            });
 
             $scope.image_file_uri = "";
             // varable for job descriptions
@@ -59,10 +69,10 @@ angular.module('erge.Home', ['ionic', 'ngCordova', 'google.places'])
                     .success(function(response) {
                         $ionicLoading.hide();
                         if (response.status == "success") {
-                            console.log(response);
+                            // console.log(response);
 
                             $scope.position = response.Data;
-                            console.log(' $scope.position=response.Data : ', $scope.position)
+                            // console.log(' $scope.position=response.Data : ', $scope.position)
                         } else if (response.status == "error") {
                             if (response.ErrorCode == "1000") {
                                 Utils.sessionErrorDialouge();
@@ -89,10 +99,7 @@ angular.module('erge.Home', ['ionic', 'ngCordova', 'google.places'])
                 $scope.getjobsForConscierge(filter);
             }
         })
-        $scope.jobLocations = {
-            startlocation: "",
-            endlocation: "",
-        };
+
         $scope.getjobsForConscierge = function(filter) {
             var filter = filter;
             //console.log('filter ===', filter)
@@ -183,44 +190,16 @@ angular.module('erge.Home', ['ionic', 'ngCordova', 'google.places'])
             $scope.$parent.$broadcast('myCustomEvent', end_clear);
         }
         $scope.gotoJobDetailView = function() {
-            // console.log($scope.jobDescription.text)
-            /*if ($scope.image_file_uri == "") {
-             Utils.showToast('Attach some imge that can help conscierge to understand about job', 'short');
-             return;
-             }
-             else*/
+            //openImageViewerPopover1    for opening image
+            //showActionsheet       for selecting pictures
             if ($scope.jobLocations.startlocation == "") {
                 Utils.showToast('Enter job start location', 'short');
                 return;
-            } else if ($scope.jobLocations.endlocation == "") {
-                Utils.showToast('Enter job end location', 'short');
-                return;
-            } else if ($scope.jobDescription.text == "") {
-                console.log('$scope.jobDescription', $scope.jobDescription);
-                Utils.showToast('Specify some description for job', 'short');
-                return;
-            } else if ($scope.jobDescription.text.length > 100) {
-                Utils.showToast('Job description is too long', 'short');
-                return;
-            } else {
-                var data = {
-                    img: $scope.image_file_uri,
-                    startLocation: $scope.jobLocations.startlocation,
-                    endLocation: $scope.jobLocations.endlocation,
-                    jobDedcription: $scope.jobDescription.text
-                }
-
-                $state.go('app.JobDetail', { data: data });
-
             }
-            // var data = {
-            //     img: "",
-            //     startLocation: '',
-            //     endLocation: "",
-            //     jobDedcription: ""
-            // }
-            // $state.go('app.JobDetail', { data: data });
+            $state.go('app.JobDetail', { data: $scope.jobLocations });
         }
+
+
         $scope.$watch(function() {
             return $scope.image_file_uri;
 
@@ -367,7 +346,7 @@ angular.module('erge.Home', ['ionic', 'ngCordova', 'google.places'])
 
         /*broadcast recieve listner*/
         $scope.$on('clearBothLocatin', function() {
-            console.log('clear both broadcast recieved ');
+            //console.log('clear both broadcast recieved ');
             $scope.jobLocations.startlocation = "";
             $scope.jobLocations.endlocation = "";
         });
