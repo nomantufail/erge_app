@@ -37,3 +37,11 @@
   max-width: 100%;
 }
 
+.bar{
+  &.bar-stable{
+    background: -moz-linear-gradient(left,  #41eeee 0%, #00b3f3 100%);
+    background: -webkit-linear-gradient(left,  #41eeee 0%,#00b3f3 100%);
+    background: linear-gradient(to right,  #41eeee 0%,#00b3f3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41eeee', endColorstr='#00b3f3',GradientType=1 );
+  }
+}
