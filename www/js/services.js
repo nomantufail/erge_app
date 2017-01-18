@@ -434,7 +434,7 @@ angular.module('erge.services', [])
                     if (results[1]) {
                         var p = results[1].formatted_address;
                         qq.resolve(p);
-                        console.log(results[1].formatted_address);
+                        // console.log(results[1].formatted_address);
                     } else {
                         window.alert('No results found');
                     }

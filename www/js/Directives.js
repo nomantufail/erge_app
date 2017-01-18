@@ -94,6 +94,50 @@ angular.module('erge.Directives', [])
                     icon: scope.currentLocationPinter
                 });
 
+                //to get click on the POI's
+                var poi = google.maps.InfoWindow.prototype.setContent;
+                //to disable infoWindow
+                var infowindow = google.maps.InfoWindow.prototype.set;
+                google.maps.InfoWindow.prototype.set = function() {};
+
+                //override the built-in setContent-method
+                google.maps.InfoWindow.prototype.setContent = function(content) {
+                    //when argument is a node
+                    if (this.logAsInternal) {
+                        var temp_map = this.getMap();
+                        //the infoWindow will be opened, usually after a click on a POI
+                        if (temp_map) {
+                            //trigger the click
+                            google.maps.event.trigger(map, 'click', { latLng: this.getPosition() });
+                        }
+
+                    }
+                    //run the original setContent-method
+                    poi.apply(this, arguments);
+                };
+
+                google.maps.event.addListener(map, 'click', function(e) {
+                    console.log(e);
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        directionsDisplay.setMap(null);
+                        directionsDisplay.setMap(map);
+                        directionsService.route({
+                            origin: e.latLng,
+                            destination: latLng,
+                            travelMode: google.maps.TravelMode.DRIVING
+                        }, function(response, status) {
+                            if (status === google.maps.DirectionsStatus.OK) {
+                                directionsDisplay.setDirections(response);
+                            } else {
+                                Utils.showToast("Unable to get directions between these points", 'short');
+                            }
+                        });
+                    }, function(error) {
+
+                    })
+                })
+
 
                 if (scope.position.length != 0) {
                     if (user_data.role == "BOSS") {

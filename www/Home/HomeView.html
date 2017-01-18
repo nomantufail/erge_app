@@ -31,7 +31,7 @@
                 <div class="top-search-input">
                     <input type="text" id="autocomplete" class="form-control" ng-autocomplete ng-model="jobLocations.startlocation" flag="start" ng-focus="disableTap()" placeholder="Enter Point of pick up" data-tap-disabled="true" />
                     <!-- <img class="top-search-cross" src="img/active-past_jobs_13.png" ng-click="clearStartLocation()"> -->
-                    <img class="top-search-cross" src="img/search-icon.png" alt="">
+                    <img class="top-search-cross" src="img/search-icon.png" alt="" ng-click="clearStartLocation()">
 
                 </div>
 
@@ -43,17 +43,17 @@
 
         </div>
         <div ng-show="changeHome" class="bottom-div">
-                <!--showConResPopOver  showActionsheet-->
-                <!--<span style="width: 30px;vertical-align: middle;" ng-hide="chnageCamraIcon" ng-click="openImageViewerPopover1()"><img
+            <!--showConResPopOver  showActionsheet-->
+            <!--<span style="width: 30px;vertical-align: middle;" ng-hide="chnageCamraIcon" ng-click="openImageViewerPopover1()"><img
           src="img/14_completeJobs_11.png" alt="" style="width: 100%;"></span>-->
-                <!--<span style="width: 30px;vertical-align: middle;" ng-show="chnageCamraIcon" ng-click="showActionsheet($event)"><img src="img/14_PostJob_11.png" alt="" style="width: 100%;"></span>-->
+            <!--<span style="width: 30px;vertical-align: middle;" ng-show="chnageCamraIcon" ng-click="showActionsheet($event)"><img src="img/14_PostJob_11.png" alt="" style="width: 100%;"></span>-->
 
 
-                <!--<span style="width:70%;border: 1px solid;"><input type="text" ng-model="jobDescription.text"
+            <!--<span style="width:70%;border: 1px solid;"><input type="text" ng-model="jobDescription.text"
                                                           name=""
                                                           placeholder="Add job description here...."
                                                           style="padding-left: 5px;;width: 100%;background-color: #2A2C2D;color: white;font-family: RobotoLight;"> </span>-->
-                <span ng-click="gotoJobDetailView()">
+            <span ng-click="gotoJobDetailView()">
                     <input type="button" class="blue-btn" value="HIRE A CONCIERGE">
                 </span>
         </div>
